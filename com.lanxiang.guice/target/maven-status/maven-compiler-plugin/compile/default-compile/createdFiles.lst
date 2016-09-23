@@ -1,0 +1,16 @@
+providerinject/UserProvider.class
+fieldjnject/SayHelloImpl.class
+annotationinterceptor/annotation/SystemOut.class
+annotationinterceptor/service/RunService.class
+module/PrivateMyBatisModule.class
+module/PrivateMyBatisModule$1.class
+providerinject/ProviderModule.class
+fieldjnject/SayHello.class
+annotationinterceptor/service/RunServiceImpl.class
+fieldjnject/SayHelloModule.class
+providerinject/User.class
+annotationinterceptor/module/AnnotationModule.class
+providerinject/InjectProviderTest.class
+annotationinterceptor/interceptor/SystemOutInterceptor.class
+fieldjnject/TestInject.class
+annotationinterceptor/Run.class
