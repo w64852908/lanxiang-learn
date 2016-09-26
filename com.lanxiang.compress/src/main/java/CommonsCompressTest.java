@@ -16,11 +16,11 @@ public class CommonsCompressTest {
 
     @Test
     public void testZip() {
-        String path = "/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn-wbg/com.lanxian" +
+        String path = "/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxian" +
                 "g.compress/src/main/resources/txts";
         File filePath = new File(path);
         File[] files = filePath.listFiles();
-        String zipFilePath = "/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn-wbg/com.lanxiang.compress" +
+        String zipFilePath = "/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.compress" +
                 "/src/main/resources/compress.zip";
         compressFilesToZip(files, zipFilePath);
     }

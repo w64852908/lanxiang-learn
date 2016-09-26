@@ -19,6 +19,7 @@
         <module>com.lanxiang.guice</module>
         <module>com.lanxiang.morphia</module>
         <module>com.lanxiang.rabbitmq</module>
+        <module>com.lanxiang.guava</module>
     </modules>
 
     <properties>
