@@ -1,8 +1,12 @@
 package com.lanxiang.web;
 
 import com.google.inject.Guice;
+import com.lanxiang.event.RemindEvent;
 import com.lanxiang.guice.ServiceModule;
 import com.lanxiang.model.Response;
+import com.lanxiang.rabbitmq.async.annotation.AsyncMark;
+import com.lanxiang.rabbitmq.async.guice.AsyncModule;
+import com.lanxiang.rabbitmq.async.register.AsyncRegister;
 import com.lanxiang.service.MessageService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,9 +31,13 @@ public class MessageController {
 
     private MessageService messageService;
 
+    private AsyncRegister asyncRegister;
+
     @PostConstruct
     public void init() {
+        asyncRegister = Guice.createInjector(new AsyncModule()).getProvider(AsyncRegister.class).get();
         messageService = Guice.createInjector(new ServiceModule()).getInstance(MessageService.class);
+        asyncRegister.register(this);
     }
 
     @GET
@@ -37,5 +45,15 @@ public class MessageController {
     public Response exposeAllRegister() {
         messageService.testMessageService();
         return new Response().setStatus(0);
+    }
+
+    @AsyncMark
+    public void asyncMark1(RemindEvent remindEvent) {
+
+    }
+
+    @AsyncMark
+    public void asyncMark2(RemindEvent remindEvent) {
+
     }
 }
