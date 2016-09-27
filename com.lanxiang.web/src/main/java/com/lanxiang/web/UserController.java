@@ -2,11 +2,13 @@ package com.lanxiang.web;
 
 import com.google.inject.Guice;
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import com.lanxiang.guice.ServiceModule;
 import com.lanxiang.model.Response;
 import com.lanxiang.model.User;
 import com.lanxiang.model.dto.UserDTO;
 import com.lanxiang.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,10 +21,13 @@ import javax.ws.rs.core.MediaType;
  */
 
 @Path("/user")
+@Singleton
+@Slf4j
+@Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
+@Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
 public class UserController {
 
     private UserService userService;
-    private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
     @PostConstruct
     public void init() {
@@ -31,14 +36,12 @@ public class UserController {
 
     @GET
     @Path("/hello")
-    @Produces(MediaType.TEXT_PLAIN)
     public String returnStrings() {
         return "Hello World";
     }
 
     @GET
     @Path("/getUser")
-    @Produces({MediaType.APPLICATION_JSON})
     public Response getUser(@QueryParam("name") String name) {
         log.info("=============================Received param : {} =================================", name);
         if (name == null || name.equals("")) {
@@ -56,8 +59,6 @@ public class UserController {
 
     @POST
     @Path("/addUser")
-    @Produces({MediaType.APPLICATION_JSON})
-    @Consumes({MediaType.APPLICATION_JSON})
     public Response addUser(UserDTO userDTO) {
         if (userDTO == null) {
             return new Response().setStatus(1).setMessage("Param is null.");
@@ -73,7 +74,6 @@ public class UserController {
 
     @DELETE
     @Path("/deleteUser")
-    @Produces({MediaType.APPLICATION_JSON})
     public Response deleteUser(@QueryParam("name") String name) {
         if (name == null) {
             return new Response().setStatus(1).setMessage("Param is null.");
@@ -89,8 +89,6 @@ public class UserController {
 
     @PUT
     @Path("/updateUser")
-    @Produces({MediaType.APPLICATION_JSON})
-    @Consumes({MediaType.APPLICATION_JSON})
     public Response updateUser(UserDTO userDTO) {
         if (userDTO == null) {
             return new Response().setStatus(1).setMessage("Param is null.");

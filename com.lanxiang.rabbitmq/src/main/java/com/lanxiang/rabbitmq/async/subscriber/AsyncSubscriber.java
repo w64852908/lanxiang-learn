@@ -1,4 +1,4 @@
-package com.lanxiang.rabbitmq.async;
+package com.lanxiang.rabbitmq.async.subscriber;
 
 import java.lang.reflect.Method;
 

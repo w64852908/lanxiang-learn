@@ -1,6 +1,5 @@
 package com.lanxiang.rabbitmq.review.topic.consumer;
 
-import com.lanxiang.rabbitmq.review.topic.consumer.MessageConsumer;
 import com.rabbitmq.client.Channel;
 
 import java.io.IOException;

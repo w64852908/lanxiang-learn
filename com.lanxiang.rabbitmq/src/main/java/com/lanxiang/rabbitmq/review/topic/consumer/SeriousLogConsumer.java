@@ -22,5 +22,6 @@ public class SeriousLogConsumer extends MessageTopicConsumer {
 
     public String getQueueName() {
         return "async.serious.log";
+//        return "async.log";
     }
 }

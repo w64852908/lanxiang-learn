@@ -1,7 +1,8 @@
-package com.lanxiang.rabbitmq.async;
+package com.lanxiang.rabbitmq.async.register;
 
 
 import com.google.inject.Provider;
+import com.lanxiang.rabbitmq.async.register.AsyncRegister;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

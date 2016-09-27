@@ -22,5 +22,7 @@ public class SlightLogConsumer extends MessageTopicConsumer {
 
     public String getQueueName() {
         return "async.slight.log";
+//        return "async.log";
     }
+
 }

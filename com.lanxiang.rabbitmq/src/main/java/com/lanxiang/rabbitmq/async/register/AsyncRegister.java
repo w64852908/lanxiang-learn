@@ -1,8 +1,9 @@
-package com.lanxiang.rabbitmq.async;
+package com.lanxiang.rabbitmq.async.register;
 
 import com.google.common.reflect.TypeToken;
+import com.lanxiang.rabbitmq.async.subscriber.AsyncSubscriber;
 import com.lanxiang.rabbitmq.async.annotation.AsyncMark;
-import org.junit.Test;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,9 +15,8 @@ import java.util.*;
  * Created by lanxiang on 2016/9/23.
  */
 @Singleton
+@Slf4j
 public class AsyncRegister {
-
-    private final static Logger log = LoggerFactory.getLogger(AsyncRegister.class);
 
     private Map<Class<?>, List<AsyncSubscriber>> register;
 
@@ -75,6 +75,13 @@ public class AsyncRegister {
             List<AsyncSubscriber> subscribers = new LinkedList<AsyncSubscriber>();
             subscribers.add(subscriber);
             register.put(clazz, subscribers);
+        }
+    }
+
+    //测试用
+    public void exposeAllRegister() {
+        for (Class<?> clazz : register.keySet()) {
+            log.info("class " + clazz + " registered (" + register.get(clazz) + ") methods.");
         }
     }
 
