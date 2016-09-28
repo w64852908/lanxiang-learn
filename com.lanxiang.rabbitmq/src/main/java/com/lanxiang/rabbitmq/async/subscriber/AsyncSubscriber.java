@@ -20,4 +20,12 @@ public class AsyncSubscriber {
     public void invokeMethod(Object parameter) throws Throwable {
         targetMethod.invoke(targetObject, parameter);
     }
+
+    @Override
+    public String toString() {
+        return "AsyncSubscriber{" +
+                "targetObject=" + targetObject +
+                ", targetMethod=" + targetMethod +
+                '}';
+    }
 }

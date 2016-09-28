@@ -20,6 +20,7 @@
         <module>com.lanxiang.morphia</module>
         <module>com.lanxiang.rabbitmq</module>
         <module>com.lanxiang.guava</module>
+        <module>com.lanxiang.test</module>
     </modules>
 
     <properties>

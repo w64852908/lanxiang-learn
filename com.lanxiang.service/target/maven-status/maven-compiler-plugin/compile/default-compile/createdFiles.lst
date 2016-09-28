@@ -2,12 +2,14 @@ com/lanxiang/model/UserExample.class
 com/lanxiang/model/dto/AddressDTO.class
 com/lanxiang/model/AddressExample$Criteria.class
 com/lanxiang/service/impl/UserServiceImpl.class
+com/lanxiang/guice/PrivateMyBatisModule$1.class
 com/lanxiang/model/AddressExample.class
 com/lanxiang/guice/ServiceModule.class
 com/lanxiang/model/UserExample$Criteria.class
 com/lanxiang/model/AddressExample$Criterion.class
 com/lanxiang/mapper/UserMapper.class
 com/lanxiang/model/UserExample$Criterion.class
+com/lanxiang/guice/PrivateMyBatisModule.class
 com/lanxiang/model/Address.class
 com/lanxiang/mapper/AddressMapper.class
 com/lanxiang/model/AddressExample$GeneratedCriteria.class

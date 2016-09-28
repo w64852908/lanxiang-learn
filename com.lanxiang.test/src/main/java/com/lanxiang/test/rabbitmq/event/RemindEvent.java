@@ -1,4 +1,4 @@
-package com.lanxiang.event;
+package com.lanxiang.test.rabbitmq.event;
 
 import lombok.Data;
 

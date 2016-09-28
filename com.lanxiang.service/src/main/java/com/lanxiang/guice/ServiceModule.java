@@ -5,18 +5,11 @@ import com.google.inject.Singleton;
 import com.google.inject.name.Names;
 import com.lanxiang.mapper.AddressMapper;
 import com.lanxiang.mapper.UserMapper;
-import com.lanxiang.model.Address;
-import com.lanxiang.model.User;
-import com.lanxiang.service.MessageService;
 import com.lanxiang.service.UserService;
-import com.lanxiang.service.impl.MessageServiceImpl;
 import com.lanxiang.service.impl.UserServiceImpl;
 import com.mongodb.MongoClient;
-import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
-import org.mybatis.guice.MyBatisModule;
-import org.mybatis.guice.datasource.builtin.PooledDataSourceProvider;
 
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -32,7 +25,6 @@ public class ServiceModule extends PrivateMyBatisModule {
     protected void configure() {
         super.configure();
         register(UserService.class, UserServiceImpl.class);
-        register(MessageService.class, MessageServiceImpl.class);
         initDbProperties();
         Names.bindProperties(this.binder(), properties);
         expose(Datastore.class);

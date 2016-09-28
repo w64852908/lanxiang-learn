@@ -84,7 +84,10 @@ public class AsyncRegister {
     public void exposeAllRegister() {
         log.info("Total register : " + register.size());
         for (Class<?> clazz : register.keySet()) {
-            log.info("class " + clazz + " registered (" + register.get(clazz) + ") methods.");
+            List<AsyncSubscriber> list = register.get(clazz);
+            for(AsyncSubscriber subscriber : list) {
+                log.info("class " + clazz + " registered (" + subscriber.toString() + ") methods.");
+            }
         }
     }
 
