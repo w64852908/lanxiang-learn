@@ -9,16 +9,18 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.MessageProperties;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.inject.Singleton;
 import java.io.IOException;
 
 /**
  * Created by lanxiang on 2016/9/26.
  */
 @Slf4j
+@Singleton
 public abstract class AbstractAsyncProducer {
 
     @Inject
-    protected Channel channel;
+    private Channel channel;
 
     @Inject
     private ObjectMapper objectMapper;
@@ -33,9 +35,7 @@ public abstract class AbstractAsyncProducer {
 
     public void declareExchange() {
         try {
-            log.info("channel " + channel.toString() + getExchangeName() + getType());
             channel.exchangeDeclare(getExchangeName(), getType());
-            log.info("Declare channel exchage succeed, echange (" + getExchangeName() + "), type (" + getType() + ")");
         } catch (IOException e) {
             log.error("Declare channel exchange failed, " + e);
         }

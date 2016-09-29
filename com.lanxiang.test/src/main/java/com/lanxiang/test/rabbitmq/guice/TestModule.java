@@ -13,6 +13,5 @@ public class TestModule extends PrivateModule {
     protected void configure() {
         bind(AsyncProducer.class).annotatedWith(ServiceProducerAnnotation.class).
                 to(ServiceProducer.class).asEagerSingleton();
-
     }
 }

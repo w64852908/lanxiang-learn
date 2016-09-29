@@ -6,12 +6,14 @@ import com.rabbitmq.client.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.List;
 
 /**
  * Created by lanxiang on 16/9/19.
  */
+@Singleton
 public abstract class MessageConsumer {
 
     protected final static Logger log = LoggerFactory.getLogger(Consumer.class);

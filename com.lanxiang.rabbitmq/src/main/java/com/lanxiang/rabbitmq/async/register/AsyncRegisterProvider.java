@@ -14,18 +14,8 @@ import javax.inject.Singleton;
 @Singleton
 public class AsyncRegisterProvider implements Provider<AsyncRegister> {
 
-    private static AsyncRegister register;
-
     @Override
     public AsyncRegister get() {
-        if (register == null) {
-            register = new AsyncRegister();
-        }
-        return register;
-    }
-
-    @PreDestroy
-    public void close() {
-        register.clear();
+        return new AsyncRegister();
     }
 }

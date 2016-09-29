@@ -18,12 +18,10 @@ import java.util.*;
 @Slf4j
 public class AsyncRegister {
 
-    private static Map<Class<?>, List<AsyncSubscriber>> register;
+    private Map<Class<?>, List<AsyncSubscriber>> register;
 
     public AsyncRegister() {
-        if (register == null) {
-            register = new HashMap<Class<?>, List<AsyncSubscriber>>();
-        }
+        register = new HashMap<Class<?>, List<AsyncSubscriber>>();
     }
 
     public void register(Object listener) {
@@ -59,7 +57,7 @@ public class AsyncRegister {
         return annotationMethods;
     }
 
-    private List<AsyncSubscriber> getSubscriber(Class<?> clazz) {
+    public List<AsyncSubscriber> getSubscriber(Class<?> clazz) {
         if (clazz == null) {
             return null;
         }
@@ -85,7 +83,7 @@ public class AsyncRegister {
         log.info("Total register : " + register.size());
         for (Class<?> clazz : register.keySet()) {
             List<AsyncSubscriber> list = register.get(clazz);
-            for(AsyncSubscriber subscriber : list) {
+            for (AsyncSubscriber subscriber : list) {
                 log.info("class " + clazz + " registered (" + subscriber.toString() + ") methods.");
             }
         }
