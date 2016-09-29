@@ -25,4 +25,12 @@ public class AsyncMessage implements Serializable {
     public Class<?> getClazz() {
         return clazz;
     }
+
+    @Override
+    public String toString() {
+        return "AsyncMessage{" +
+                "object=" + object +
+                ", clazz=" + clazz +
+                '}';
+    }
 }

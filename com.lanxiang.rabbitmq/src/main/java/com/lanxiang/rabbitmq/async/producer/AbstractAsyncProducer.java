@@ -29,6 +29,18 @@ public abstract class AbstractAsyncProducer {
     //channel的类型
     protected abstract String getType();
 
+    protected abstract String getDefaultRoutingKey();
+
+    public void declareExchange() {
+        try {
+            log.info("channel " + channel.toString() + getExchangeName() + getType());
+            channel.exchangeDeclare(getExchangeName(), getType());
+            log.info("Declare channel exchage succeed, echange (" + getExchangeName() + "), type (" + getType() + ")");
+        } catch (IOException e) {
+            log.error("Declare channel exchange failed, " + e);
+        }
+    }
+
     private byte[] buildMessage(AsyncMessage asyncMessage) {
         byte[] bytes = null;
         try {
@@ -39,6 +51,13 @@ public abstract class AbstractAsyncProducer {
         return bytes;
     }
 
+    public void sendMessage(Object object) {
+        if (object == null) {
+            return;
+        }
+        sendMessage(object, getDefaultRoutingKey());
+    }
+
     public void sendMessage(Object object, String routingKey) {
         if (object == null) {
             return;
@@ -46,7 +65,7 @@ public abstract class AbstractAsyncProducer {
         sendMessage(new AsyncMessage(object), routingKey);
     }
 
-    public void sendMessage(AsyncMessage asyncMessage, String routingKey) {
+    private void sendMessage(AsyncMessage asyncMessage, String routingKey) {
         sendMessage(asyncMessage, MessageProperties.PERSISTENT_TEXT_PLAIN, routingKey);
     }
 

@@ -1,14 +1,16 @@
 package com.lanxiang.test.rabbitmq.async;
 
 
-import com.lanxiang.rabbitmq.async.message.RoutingAsyncProducer;
+import com.lanxiang.rabbitmq.async.producer.RoutingAsyncProducer;
+import com.lanxiang.rabbitmq.async.producer.AsyncProducer;
 
 /**
  * Created by lanxiang on 2016/9/28.
  */
-public class ServiceProducer extends RoutingAsyncProducer {
+public class ServiceProducer extends RoutingAsyncProducer implements AsyncProducer{
 
-    protected String getExchangeName() {
-        return "ex_service_direct";
+    @Override
+    protected String getDefaultRoutingKey() {
+        return "async_service";
     }
 }

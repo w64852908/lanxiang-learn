@@ -6,8 +6,8 @@ package com.lanxiang.rabbitmq.async.producer;
 public interface AsyncProducer {
 
     //发送持久化的消息
-    void durabilityPublish(Object body);
+    void sendMessage(Object body);
 
     //发送带有选择键的持久化消息
-    void durabilityPublish(Object body, String routingKey);
+    void sendMessage(Object body, String routingKey);
 }

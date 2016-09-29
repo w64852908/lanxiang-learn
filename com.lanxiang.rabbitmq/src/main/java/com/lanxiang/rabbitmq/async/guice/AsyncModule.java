@@ -17,7 +17,7 @@ public class AsyncModule extends PrivateModule {
     protected void configure() {
         bind(AsyncRegister.class).toProvider(AsyncRegisterProvider.class).asEagerSingleton();
 
-        bind(AbstractAsyncProducer.class);
+        expose(ObjectMapper.class);
     }
 
     @Provides
