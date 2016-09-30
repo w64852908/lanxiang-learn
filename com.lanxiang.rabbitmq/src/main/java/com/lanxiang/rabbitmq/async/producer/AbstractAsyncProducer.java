@@ -35,7 +35,7 @@ public abstract class AbstractAsyncProducer {
 
     public void declareExchange() {
         try {
-            channel.exchangeDeclare(getExchangeName(), getType());
+            channel.exchangeDeclare(getExchangeName(), getType(), true, false, null);
         } catch (IOException e) {
             log.error("Declare channel exchange failed, " + e);
         }

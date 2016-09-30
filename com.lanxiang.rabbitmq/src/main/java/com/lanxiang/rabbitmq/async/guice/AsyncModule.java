@@ -21,6 +21,7 @@ public class AsyncModule extends PrivateModule {
         expose(AsyncRegister.class);
         expose(ObjectMapper.class);
         bind(AsyncExecutor.class).to(AsyncExecutorImpl.class).asEagerSingleton();
+        expose(AsyncExecutor.class);
     }
 
     @Provides

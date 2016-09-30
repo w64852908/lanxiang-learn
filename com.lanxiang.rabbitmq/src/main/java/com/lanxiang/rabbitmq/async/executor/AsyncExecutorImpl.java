@@ -19,19 +19,18 @@ import java.util.List;
 public class AsyncExecutorImpl implements AsyncExecutor {
 
     @Inject
-    protected AsyncRegister asyncRegister;
+    private AsyncRegister asyncRegister;
 
     @Inject
-    protected ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
-    private AsyncMessage receiveMessageBody(byte[] bytes) throws Throwable {
+    public AsyncMessage receiveMessageBody(byte[] bytes) throws Throwable {
         if (bytes == null) {
             return null;
         }
         Object object;
         String value = new String(bytes, "utf-8");
         JSONObject jsonObject = new JSONObject(value);
-
         Object objectValue = jsonObject.get("object");
         String className = jsonObject.getString("clazz");
         Class clazz = Class.forName(className);
@@ -46,8 +45,7 @@ public class AsyncExecutorImpl implements AsyncExecutor {
 
     @Override
     public int executeWorks(byte[] bytes) throws Throwable {
-        AsyncMessage message = null;
-        message = receiveMessageBody(bytes);
+        AsyncMessage message = receiveMessageBody(bytes);
         if (message == null) {
             return -1;
         }

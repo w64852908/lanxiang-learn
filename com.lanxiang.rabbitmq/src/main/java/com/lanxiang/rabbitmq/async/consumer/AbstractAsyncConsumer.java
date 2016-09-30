@@ -2,8 +2,10 @@ package com.lanxiang.rabbitmq.async.consumer;
 
 import com.google.inject.Inject;
 import com.lanxiang.rabbitmq.async.executor.AsyncExecutor;
+import com.lanxiang.rabbitmq.async.message.AsyncMessage;
 import com.rabbitmq.client.*;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONObject;
 
 import javax.inject.Singleton;
 import java.io.IOException;
@@ -21,8 +23,9 @@ public abstract class AbstractAsyncConsumer {
     @Inject
     private Connection connection;
 
-    protected Channel channel;
+    private Channel channel;
 
+    @Inject
     private AsyncExecutor asyncExecutor;
 
     private Consumer consumer;
@@ -45,7 +48,7 @@ public abstract class AbstractAsyncConsumer {
             declareQueue();
             bindQueue();
         } catch (IOException e) {
-            log.error("Create channel failed, " + e.getMessage());
+            log.error("Create channel failed, " + e.getCause().getMessage());
         }
         consumer = new DefaultConsumer(channel) {
             @Override
@@ -53,13 +56,14 @@ public abstract class AbstractAsyncConsumer {
                 int result = 0;
                 try {
                     result = asyncExecutor.executeWorks(body);
+//                    log.info("Execute message " + asyncExecutor.receiveMessageBody(body).toString());
                     if (result == -1) {
                         channel.basicReject(envelope.getDeliveryTag(), false);
                     }
                 } catch (Throwable t) {
-                    log.error("Execute message failed, " + t.getMessage());
+                    log.error("Execute message failed, " + t);
                 }
-                if (result > 0) {
+                if (result >= 0) {
                     channel.basicAck(envelope.getDeliveryTag(), false);
                 }
             }
@@ -72,7 +76,7 @@ public abstract class AbstractAsyncConsumer {
             public void run() {
                 //为啥要休眠一分钟
                 try {
-                    Thread.sleep(60000);
+                    Thread.sleep(6000);
                 } catch (InterruptedException e) {
                     log.error(e.getMessage());
                 }
