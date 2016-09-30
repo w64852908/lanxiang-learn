@@ -24,7 +24,7 @@ public class AsyncExecutorImpl implements AsyncExecutor {
     @Inject
     private ObjectMapper objectMapper;
 
-    public AsyncMessage receiveMessageBody(byte[] bytes) throws Throwable {
+    private AsyncMessage receiveMessageBody(byte[] bytes) throws Throwable {
         if (bytes == null) {
             return null;
         }

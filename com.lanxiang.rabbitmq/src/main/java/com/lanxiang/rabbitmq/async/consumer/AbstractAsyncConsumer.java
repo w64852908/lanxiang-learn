@@ -2,10 +2,8 @@ package com.lanxiang.rabbitmq.async.consumer;
 
 import com.google.inject.Inject;
 import com.lanxiang.rabbitmq.async.executor.AsyncExecutor;
-import com.lanxiang.rabbitmq.async.message.AsyncMessage;
 import com.rabbitmq.client.*;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
 
 import javax.inject.Singleton;
 import java.io.IOException;
@@ -56,7 +54,6 @@ public abstract class AbstractAsyncConsumer {
                 int result = 0;
                 try {
                     result = asyncExecutor.executeWorks(body);
-//                    log.info("Execute message " + asyncExecutor.receiveMessageBody(body).toString());
                     if (result == -1) {
                         channel.basicReject(envelope.getDeliveryTag(), false);
                     }
@@ -74,9 +71,9 @@ public abstract class AbstractAsyncConsumer {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                //为啥要休眠一分钟
+                //休眠一分钟开始接收处理消息
                 try {
-                    Thread.sleep(6000);
+                    Thread.sleep(15000);
                 } catch (InterruptedException e) {
                     log.error(e.getMessage());
                 }

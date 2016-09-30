@@ -73,7 +73,7 @@ public abstract class AbstractAsyncProducer {
         if (asyncMessage == null) {
             return;
         }
-        log.info(" [x] Sent message (" + asyncMessage.toString() + ") to routingkey (" + routingKey + ")");
+//        log.info(" [x] Sent message (" + asyncMessage.toString() + ") to routingkey (" + routingKey + ")");
         byte[] bytes = buildMessage(asyncMessage);
         try {
             channel.basicPublish(getExchangeName(), routingKey, properties, bytes);
