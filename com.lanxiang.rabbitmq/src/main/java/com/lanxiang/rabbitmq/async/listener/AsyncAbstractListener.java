@@ -17,7 +17,6 @@ public abstract class AsyncAbstractListener {
 
     @PostConstruct
     public final void init() {
-        log.info("======================Post construct asyncabstract listener.=======================");
         register.register(this);
     }
 }

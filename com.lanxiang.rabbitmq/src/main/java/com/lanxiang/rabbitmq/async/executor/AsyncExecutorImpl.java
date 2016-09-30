@@ -49,7 +49,7 @@ public class AsyncExecutorImpl implements AsyncExecutor {
         AsyncMessage message = null;
         message = receiveMessageBody(bytes);
         if (message == null) {
-            return 0;
+            return -1;
         }
 
         Class<?> clazz = message.getClazz();
@@ -58,6 +58,7 @@ public class AsyncExecutorImpl implements AsyncExecutor {
         List<AsyncSubscriber> subscribers = asyncRegister.getSubscriber(clazz);
         if (subscribers == null || subscribers.size() == 0) {
             log.error("找不到消息对应的执行方法");
+            return -1;
         }
 
         for (AsyncSubscriber subscriber : subscribers) {
