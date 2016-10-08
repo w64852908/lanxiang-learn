@@ -21,6 +21,7 @@
         <module>com.lanxiang.rabbitmq</module>
         <module>com.lanxiang.guava</module>
         <module>com.lanxiang.test</module>
+        <module>com.lanxiang.protobuf</module>
     </modules>
 
     <properties>

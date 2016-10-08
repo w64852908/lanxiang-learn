@@ -18,9 +18,8 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:casbah-core_2.10:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:casbah-commons_2.10:2.6.1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.nscala-time:nscala-time_2.10:0.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.20" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:casbah-query_2.10:2.6.1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.nscala-time:nscala-time_2.10:0.2.0" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.joda:joda-convert:1.2" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.11" level="project" />
@@ -33,6 +32,7 @@
     <orderEntry type="library" name="Maven: com.google.inject.extensions:guice-multibindings:4.0" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.1.7" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.7" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.20" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.2" level="project" />
