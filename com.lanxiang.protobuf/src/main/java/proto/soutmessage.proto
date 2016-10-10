@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.lanxiang.protobuf;
+
+option java_multiple_files = true;
+
+//问候
+message Greeting {
+
+    int32 id = 1;
+
+    string from = 2;
+
+    string to = 3;
+
+    string content = 4;
+}
+
+message Person {
+
+    int64 id = 1;
+
+    string name = 2;
+
+    int32 age = 3;
+}
