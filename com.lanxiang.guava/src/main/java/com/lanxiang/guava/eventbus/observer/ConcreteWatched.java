@@ -1,4 +1,4 @@
-package observer;
+package com.lanxiang.guava.eventbus.observer;
 
 import java.util.ArrayList;
 import java.util.List;

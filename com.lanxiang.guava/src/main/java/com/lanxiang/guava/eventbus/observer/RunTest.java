@@ -1,4 +1,4 @@
-package observer;
+package com.lanxiang.guava.eventbus.observer;
 
 import org.junit.Test;
 

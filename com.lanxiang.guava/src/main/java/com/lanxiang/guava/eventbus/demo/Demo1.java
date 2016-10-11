@@ -1,4 +1,4 @@
-package eventbus;
+package com.lanxiang.guava.eventbus.demo;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;

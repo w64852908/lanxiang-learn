@@ -11,7 +11,6 @@
         <module>com.lanxiang.mybatis</module>
         <module>com.lanxiang.mongoshell</module>
         <module>com.lanxiang.compress</module>
-        <module>com.lanxiang.eventbus</module>
         <module>com.lanxiang.jersey</module>
         <module>com.lanxiang.log</module>
         <module>com.lanxiang.service</module>
@@ -93,12 +92,32 @@
         </dependency>
 
         <!-- org json -->
-        <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20160810</version>
         </dependency>
 
+        <!-- guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+
     </dependencies>
+
+    <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+    </build>
 </project>

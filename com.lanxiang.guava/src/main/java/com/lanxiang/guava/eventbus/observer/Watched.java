@@ -1,4 +1,4 @@
-package observer;
+package com.lanxiang.guava.eventbus.observer;
 
 /**
  * Created by lanxiang on 16/8/29.
