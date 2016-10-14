@@ -9,8 +9,6 @@ import com.lanxiang.model.User;
 import com.lanxiang.model.dto.UserDTO;
 import com.lanxiang.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.ws.rs.*;

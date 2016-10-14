@@ -1,4 +1,0 @@
-	
-For your information: I can reproduce your issue. Seems as if the table added with insertTableBefore has a fixed width of 0. Even the Word GUI cannot repair this. But I will not bother with HWPF (binary Word format) myself anymore. This format is outdated since 2007. XWPF (Office OpenXML) is the current format. Since nobody answered, I believe I am not the only one with this opinion. – Axel Richter Aug 11 at 5:15 
-  	 	
-Thanks very much for your concern and replying. I explained to my product manager about differences between doc and docx before, but her insist on supporting doc type. It seems we must change our strategy that only allow user export word with table in docx type. – Blad Blue Shift Aug 11 at 6:26    

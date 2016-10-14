@@ -16,6 +16,10 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class CacheInterceptor implements MethodInterceptor {
 
+    /**
+     * key - 需要缓存的方法
+     * value - 对应的缓存
+     */
     private final ConcurrentHashMap<String, Cache<Object, Object>> caches;
 
     public CacheInterceptor(ConcurrentHashMap<String, Cache<Object, Object>> caches) {
@@ -38,6 +42,10 @@ public class CacheInterceptor implements MethodInterceptor {
 
         Cache<Object, Object> cache = caches.get(method);
 
+        /**
+         * get/getIfPresent方法当参数为null时会抛空指针异常
+         * 因此invocation.proceed所执行的函数,返回值不能为null
+         */
         return cache.get(key, new Callable<Object>() {
             @Override
             public Object call() throws Exception {
@@ -49,7 +57,6 @@ public class CacheInterceptor implements MethodInterceptor {
                 }
             }
         });
-
     }
 
     //生成用于存储在缓存中的唯一id
