@@ -15,7 +15,7 @@ public class JedisModule extends PrivateModule {
     protected void configure() {
         bind(JedisPool.class).toProvider(JedisPoolProvider.class).asEagerSingleton();
         expose(JedisPool.class);
-        bind(JedisCluster.class).toProvider(JedisClusterProvider.class).asEagerSingleton();
-        expose(JedisCluster.class);
+//        bind(JedisCluster.class).toProvider(JedisClusterProvider.class).asEagerSingleton();
+//        expose(JedisCluster.class);
     }
 }
