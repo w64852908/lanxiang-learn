@@ -23,6 +23,7 @@
         <module>com.lanxiang.protobuf</module>
         <module>com.lanxiang.apachecommons</module>
         <module>com.lanxiang.javaadvanced</module>
+        <module>com.lanxiang.redis</module>
     </modules>
 
     <properties>
