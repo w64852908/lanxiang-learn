@@ -1,6 +1,5 @@
 package com.lanxiang.redis.command;
 
-import com.google.common.reflect.TypeToken;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.lanxiang.redis.resource.guice.JedisModule;
@@ -15,7 +14,7 @@ import redis.clients.jedis.JedisPool;
  * Created by lanxiang on 2016/10/18.
  */
 @Slf4j
-public class JedisClusterMethod {
+public class JedisMethod {
 
     private JedisCluster jedisCluster;
 
@@ -48,5 +47,15 @@ public class JedisClusterMethod {
             jedis.append(key, i + "");
         }
         log.info("get key \'testAppend\' : " + jedis.get(key));
+    }
+
+    @Test
+    public void testRenamenx() {
+        jedis.renamenx("testAppend", "testAppend1");
+    }
+
+    @Test
+    public void testExpire(){
+        jedis.expire("testAppend", 100);
     }
 }
