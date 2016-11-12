@@ -9,16 +9,27 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.lanxiang.rabbitmq</groupId>
-    <artifactId>rabbitmq</artifactId>
+    <groupId>com.lanxiang.poi</groupId>
+    <artifactId>poi</artifactId>
+
+    <properties>
+        <poi-version>3.14</poi-version>
+    </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>3.5.3</version>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi-version}</version>
         </dependency>
     </dependencies>
+
 
 </project>

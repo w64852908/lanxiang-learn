@@ -10,7 +10,6 @@
     <modules>
         <module>com.lanxiang.mybatis</module>
         <module>com.lanxiang.mongoshell</module>
-        <module>com.lanxiang.compress</module>
         <module>com.lanxiang.jersey</module>
         <module>com.lanxiang.log</module>
         <module>com.lanxiang.service</module>
@@ -24,6 +23,7 @@
         <module>com.lanxiang.apachecommons</module>
         <module>com.lanxiang.javaadvanced</module>
         <module>com.lanxiang.redis</module>
+        <module>com.lanxiang.poi</module>
     </modules>
 
     <properties>
@@ -115,7 +115,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.3.2</version>
+                    <version>2.4</version>
                     <configuration>
                         <source>1.7</source>
                         <target>1.7</target>
