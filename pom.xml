@@ -24,6 +24,7 @@
         <module>com.lanxiang.javaadvanced</module>
         <module>com.lanxiang.redis</module>
         <module>com.lanxiang.poi</module>
+        <module>com.lanxiang.jersey2guice</module>
     </modules>
 
     <properties>
@@ -108,6 +109,20 @@
             <version>19.0</version>
         </dependency>
 
+
+        <!-- jersey2guice -->
+        <dependency>
+            <groupId>com.squarespace.jersey2-guice</groupId>
+            <artifactId>jersey2-guice</artifactId>
+            <version>0.10</version>
+        </dependency>
+
+        <!-- jetty -->
+        <dependency>
+            <groupId>org.eclipse.jetty.aggregate</groupId>
+            <artifactId>jetty-all</artifactId>
+            <version>9.2.0.RC0</version>
+        </dependency>
     </dependencies>
 
     <build>

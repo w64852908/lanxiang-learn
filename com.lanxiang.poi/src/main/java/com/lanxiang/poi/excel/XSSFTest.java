@@ -19,6 +19,10 @@ public class XSSFTest {
 
     private String outputPath = "/Users/lanxiang/Downloads/id2file.txt";
 
+//    private String excelFolder = "/Users/lanxiang/Desktop/excel/forCustomer";
+
+//    private String outputPath = "/Users/lanxiang/Desktop/excel/forCustomer/id2file.txt";
+
     private Map<String, List<String>> idToFiles = new HashMap<>();
 
     private List<Map.Entry<String, List<String>>> sortedIdToFiles;
@@ -42,7 +46,7 @@ public class XSSFTest {
         File excelFolder = new File(excelPath);
         File[] excelFiles = excelFolder.listFiles();
         for (File excel : excelFiles) {
-            if (!excel.getName().startsWith("~$")) {
+            if (!excel.getName().startsWith("~$") && !excel.getName().equals(".DS_Store")) {
                 result.add(excel);
             }
         }
