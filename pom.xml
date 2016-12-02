@@ -25,6 +25,7 @@
         <module>com.lanxiang.redis</module>
         <module>com.lanxiang.poi</module>
         <module>com.lanxiang.jersey2guice</module>
+        <module>com.lanxiang.designpattern</module>
     </modules>
 
     <properties>
