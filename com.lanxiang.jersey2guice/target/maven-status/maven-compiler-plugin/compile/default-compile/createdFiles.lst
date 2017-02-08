@@ -1,0 +1,7 @@
+com/lanxiang/jersey2guice/aop/AopTest.class
+com/lanxiang/jersey2guice/aop/MyResource.class
+com/lanxiang/jersey2guice/aop/MyInterceptor.class
+com/lanxiang/jersey2guice/utils/HttpServerUtils.class
+com/lanxiang/jersey2guice/aop/AopTest$1.class
+com/lanxiang/jersey2guice/aop/MyAnnotation.class
+com/lanxiang/jersey2guice/utils/HttpServerUtils$HttpServer.class

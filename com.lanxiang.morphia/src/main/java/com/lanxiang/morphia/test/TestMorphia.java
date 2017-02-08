@@ -54,4 +54,14 @@ public class TestMorphia {
         List<UserInfo> userInfos = query.asList();
         System.out.println(userInfos.size());
     }
+
+    @Test
+    public void testQueryAndInsert() {
+        Query<UserInfo> query = datastore.createQuery(UserInfo.class)
+                .field("_id").equal(new ObjectId(_id));
+        UserInfo userInfo = query.get();
+        userInfo.setId(null);
+        userInfo.setPhone("18615351031");
+        datastore.save(userInfo);
+    }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by lanxiang on 16/8/22.
  */
-public class UserDAOImpl implements UserMapper {
+public class UserDAOImplBySqlSession implements UserMapper {
 
     private SqlSessionFactory sqlSessionFactory;
 

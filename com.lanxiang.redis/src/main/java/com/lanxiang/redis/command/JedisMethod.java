@@ -55,7 +55,19 @@ public class JedisMethod {
     }
 
     @Test
-    public void testExpire(){
+    public void testExpire() {
         jedis.expire("testAppend", 100);
+    }
+
+    @Test
+    public void testIncr() {
+        String key = "asset:714353:5860e50ded113579ca3b0fad";
+        if (jedis.get(key) == null) {
+            jedis.append(key, 0 + "");
+        }
+        int addNum = 10;
+        System.out.println(jedis.get(key));
+        jedis.incrBy(key, addNum);
+        System.out.println(jedis.get(key));
     }
 }

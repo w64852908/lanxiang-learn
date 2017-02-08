@@ -1,0 +1,12 @@
+com/lanxiang/test/orgjson/OrgJson.class
+com/lanxiang/test/rabbitmq/guice/TestModule.class
+com/lanxiang/test/rabbitmq/event/RemindEvent.class
+com/lanxiang/test/rabbitmq/async/ServiceProducer.class
+com/lanxiang/test/rabbitmq/annotation/ServiceProducerAnnotation.class
+com/lanxiang/test/rabbitmq/run/ConsumeMessage.class
+com/lanxiang/test/rabbitmq/annotation/ServiceConsumerAnnotation.class
+com/lanxiang/test/rabbitmq/event/PersistEvent.class
+com/lanxiang/test/rabbitmq/async/ServiceConsumer.class
+com/lanxiang/test/rabbitmq/event/Event.class
+com/lanxiang/test/rabbitmq/service/AsyncService.class
+com/lanxiang/test/rabbitmq/run/ProduceMessage.class

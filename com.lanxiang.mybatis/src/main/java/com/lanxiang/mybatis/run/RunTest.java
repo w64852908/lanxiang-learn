@@ -1,6 +1,6 @@
 package com.lanxiang.mybatis.run;
 
-import com.lanxiang.mybatis.DAOImpl.UserDAOImpl;
+import com.lanxiang.mybatis.DAOImpl.UserDAOImplBySqlSession;
 import com.lanxiang.mybatis.mapper.UserMapper;
 import com.lanxiang.mybatis.model.User;
 import org.junit.Test;
@@ -14,7 +14,7 @@ public class RunTest {
 
     @Test
     public void testInsertUser(){
-        userDAO = new UserDAOImpl();
+        userDAO = new UserDAOImplBySqlSession();
         User user = new User();
         user.setName("兰兢");
         user.setSex(1);
