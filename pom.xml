@@ -26,6 +26,7 @@
         <module>com.lanxiang.poi</module>
         <module>com.lanxiang.jersey2guice</module>
         <module>com.lanxiang.designpattern</module>
+        <module>com.lanxiang.leetcode</module>
     </modules>
 
     <properties>
