@@ -14,4 +14,5 @@ hs_err_pid*
 logs
 log
 *.iml
+*.lst
 .DS_Store
