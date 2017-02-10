@@ -13,6 +13,8 @@ import org.junit.Test;
  * The array may contain duplicates.
  * <p>
  * Subscribe to see which companies asked this question.
+ * <p>
+ * 题意:有一组升序数组,现在在某个下标处被转折了一次.现在需要给一个数字,判断是否在数组中
  */
 
 public class _081SearchInRotatedSortedArray2 {
