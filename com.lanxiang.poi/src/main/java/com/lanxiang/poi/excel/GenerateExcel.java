@@ -15,7 +15,7 @@ public class GenerateExcel {
 
     private List<String> headerList = new ArrayList<>();
 
-    private String outputPath = "/Users/lanxiang/desktop/excel/template.xls";
+    private String outputPath = "template.xls";
 
     private int totalRow = 5000;
 
@@ -28,11 +28,6 @@ public class GenerateExcel {
     private String unit = "个";
 
     private int needReturn = 1;
-
-    private void init(String configFile) {
-        initHeaderList();
-        initConfig(new File(configFile));
-    }
 
     private void initHeaderList() {
         headerList.add("物品编号");
@@ -55,40 +50,61 @@ public class GenerateExcel {
             System.out.println("配置文件错误");
             e.printStackTrace();
         }
-        if (template.getOutPutPath() != null) {
-            this.outputPath = template.getOutPutPath();
-        }
-        if (template.getTotalRow() != null) {
-            this.totalRow = template.getTotalRow();
-        }
-        if (template.getName() != null) {
-            this.name = template.getName();
-        }
-        if (template.getModel() != null) {
-            this.model = template.getModel();
-        }
-        if (template.getQuantity() != null) {
-            this.quantity = template.getQuantity();
-        }
-        if (template.getUnit() != null) {
-            this.unit = template.getUnit();
-        }
-        if (template.getNeedReturn() != null) {
-            this.needReturn = template.getNeedReturn();
+        if (template!= null) {
+            if (template.getOutPutPath() != null) {
+                this.outputPath = template.getOutPutPath();
+            }
+            if (template.getTotalRow() != null) {
+                this.totalRow = template.getTotalRow();
+            }
+            if (template.getName() != null) {
+                this.name = template.getName();
+            }
+            if (template.getModel() != null) {
+                this.model = template.getModel();
+            }
+            if (template.getQuantity() != null) {
+                this.quantity = template.getQuantity();
+            }
+            if (template.getUnit() != null) {
+                this.unit = template.getUnit();
+            }
+            if (template.getNeedReturn() != null) {
+                this.needReturn = template.getNeedReturn();
+            }
         }
     }
 
     //生成excel模板
-    public void generateExcelTemplate() throws Exception {
+    private void generateExcelTemplate(){
         Workbook workbook = new HSSFWorkbook();
         Sheet sheet = workbook.createSheet("微办公-资产管理模板");
         generateExcelHeader(sheet);
         List<Material> materialList = generateMaterialList();
         generateExcelContent(sheet, materialList);
-        FileOutputStream fos = new FileOutputStream(outputPath);
-        workbook.write(fos);
-        fos.close();
-        workbook.close();
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(outputPath);
+            workbook.write(fos);
+        } catch (FileNotFoundException e) {
+            System.out.println("生成excel的目标路径错误");
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fos != null) {
+                    fos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                workbook.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         System.out.println("done.");
     }
 
@@ -149,16 +165,17 @@ public class GenerateExcel {
     }
 
     public static void main(String[] args) throws Exception {
+        GenerateExcel excel = new GenerateExcel();
         if (args == null || args.length < 1) {
-            System.out.println("没有配置文件,生成默认的配置文件");
+            System.out.println("没有配置文件,生成默认的excel文件");
+        } else {
+            excel.initConfig(new File(args[0]));
         }
-        System.out.println(args[0]);
-//        GenerateExcel excel = new GenerateExcel();
-//        excel.init(args[0]);
-//        excel.generateExcelTemplate();
+        excel.initHeaderList();
+        excel.generateExcelTemplate();
     }
 
-    static class Material {
+    private static class Material {
 
         private String sn;
 

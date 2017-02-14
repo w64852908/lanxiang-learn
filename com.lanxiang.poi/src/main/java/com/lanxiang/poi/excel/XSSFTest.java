@@ -1,6 +1,8 @@
 package com.lanxiang.poi.excel;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Test;
@@ -139,5 +141,21 @@ public class XSSFTest {
         for (String id : idToFiles.keySet()) {
             System.out.println("id : " + id + ", " + idToFiles.get(id));
         }
+    }
+
+    @Test
+    public void run() throws JsonProcessingException {
+        Template template = new Template();
+        template.setName("手机");
+        template.setOutPutPath("/Users/lanxiang/desktop/excel/template.xls");
+        template.setTotalRow(5000);
+        template.setModel("iphone7s");
+        template.setQuantity(1);
+        template.setUnit("个");
+        template.setNeedReturn(1);
+        System.out.println(new ObjectMapper().writeValueAsString(template));
+
+        String path = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+        System.out.println(path);
     }
 }

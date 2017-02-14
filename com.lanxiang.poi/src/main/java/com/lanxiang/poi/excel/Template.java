@@ -5,6 +5,8 @@ package com.lanxiang.poi.excel;
  */
 public class Template {
 
+    private String comment;
+
     private String outPutPath;
 
     private Integer totalRow;
@@ -21,6 +23,14 @@ public class Template {
 
     public Template(){
 
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public String getOutPutPath() {
@@ -79,3 +89,4 @@ public class Template {
         this.needReturn = needReturn;
     }
 }
+
