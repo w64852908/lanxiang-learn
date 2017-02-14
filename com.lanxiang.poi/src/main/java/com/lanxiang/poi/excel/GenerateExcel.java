@@ -1,14 +1,11 @@
 package com.lanxiang.poi.excel;
 
-import lombok.Data;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-import org.junit.Before;
-import org.junit.Test;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,25 +13,25 @@ import java.util.List;
  */
 public class GenerateExcel {
 
-    private final static List<String> headerList = new ArrayList<>();
+    private List<String> headerList = new ArrayList<>();
 
-    private final static String excelPath = "/Users/lanxiang/desktop/excel/template.xls";
+    private String outputPath = "/Users/lanxiang/desktop/excel/template.xls";
 
-    private final static int totalRow = 5000;
+    private int totalRow = 5000;
 
-    private final static String name = "手机";
+    private String name = "手机";
 
-    private final static String model = "iphone10";
+    private String model = "iphone7";
 
-    private final static int quantity = 1;
+    private int quantity = 1;
 
-    private final static String unit = "个";
+    private String unit = "个";
 
-    private final static int needReturn = 1;
+    private int needReturn = 1;
 
-    @Before
-    public void init() {
+    private void init(String configFile) {
         initHeaderList();
+        initConfig(new File(configFile));
     }
 
     private void initHeaderList() {
@@ -46,6 +43,41 @@ public class GenerateExcel {
         headerList.add("是否需归还(非必填)");
     }
 
+    private void initConfig(File file) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Template template = null;
+        try {
+            template = objectMapper.readValue(file, Template.class);
+        } catch (IOException e) {
+            System.out.println("找不到配置文件");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("配置文件错误");
+            e.printStackTrace();
+        }
+        if (template.getOutPutPath() != null) {
+            this.outputPath = template.getOutPutPath();
+        }
+        if (template.getTotalRow() != null) {
+            this.totalRow = template.getTotalRow();
+        }
+        if (template.getName() != null) {
+            this.name = template.getName();
+        }
+        if (template.getModel() != null) {
+            this.model = template.getModel();
+        }
+        if (template.getQuantity() != null) {
+            this.quantity = template.getQuantity();
+        }
+        if (template.getUnit() != null) {
+            this.unit = template.getUnit();
+        }
+        if (template.getNeedReturn() != null) {
+            this.needReturn = template.getNeedReturn();
+        }
+    }
+
     //生成excel模板
     public void generateExcelTemplate() throws Exception {
         Workbook workbook = new HSSFWorkbook();
@@ -53,10 +85,11 @@ public class GenerateExcel {
         generateExcelHeader(sheet);
         List<Material> materialList = generateMaterialList();
         generateExcelContent(sheet, materialList);
-        FileOutputStream fos = new FileOutputStream(excelPath);
+        FileOutputStream fos = new FileOutputStream(outputPath);
         workbook.write(fos);
         fos.close();
         workbook.close();
+        System.out.println("done.");
     }
 
     //生成表头
@@ -115,12 +148,16 @@ public class GenerateExcel {
         return materialList;
     }
 
-    @Test
-    public void run() throws Exception {
-        generateExcelTemplate();
+    public static void main(String[] args) throws Exception {
+        if (args == null || args.length < 1) {
+            System.out.println("没有配置文件,生成默认的配置文件");
+        }
+        System.out.println(args[0]);
+//        GenerateExcel excel = new GenerateExcel();
+//        excel.init(args[0]);
+//        excel.generateExcelTemplate();
     }
 
-    @Data
     static class Material {
 
         private String sn;
@@ -134,6 +171,54 @@ public class GenerateExcel {
         private String model;
 
         private String unit;
+
+        public String getSn() {
+            return sn;
+        }
+
+        public void setSn(String sn) {
+            this.sn = sn;
+        }
+
+        public Integer getQuantity() {
+            return quantity;
+        }
+
+        public void setQuantity(Integer quantity) {
+            this.quantity = quantity;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getNeedReturn() {
+            return needReturn;
+        }
+
+        public void setNeedReturn(Integer needReturn) {
+            this.needReturn = needReturn;
+        }
+
+        public String getModel() {
+            return model;
+        }
+
+        public void setModel(String model) {
+            this.model = model;
+        }
+
+        public String getUnit() {
+            return unit;
+        }
+
+        public void setUnit(String unit) {
+            this.unit = unit;
+        }
 
         public enum NeedReturn {
 

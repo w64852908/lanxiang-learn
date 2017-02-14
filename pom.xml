@@ -125,6 +125,14 @@
             <artifactId>jetty-all</artifactId>
             <version>9.2.0.RC0</version>
         </dependency>
+
+        <!-- spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.3.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
