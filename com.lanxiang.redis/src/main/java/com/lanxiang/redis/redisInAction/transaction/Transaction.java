@@ -65,12 +65,34 @@ public class Transaction {
         TimeUnit.MILLISECONDS.sleep(500);
     }
 
-    private void transaction(Pipeline pipeline) throws Exception {
-        pipeline.multi();
+    private void transaction(Jedis jedis) throws Exception {
+        Pipeline pipeline = jedis.pipelined();
         pipeline.incr(transKey);
         TimeUnit.MILLISECONDS.sleep(100);
         pipeline.incrBy(transKey, -1);
-        System.out.println(pipeline.syncAndReturnAll().get(0));
+        //结束pipeline,并开始从响应中获取数据
+        List<Object> responses = pipeline.syncAndReturnAll();
+        if (responses == null || responses.isEmpty()) {
+            throw new RuntimeException("Pipeline error : no response...");
+        }
+        for (Object resp : responses) {
+            System.out.println("Response:" + resp.toString());
+        }
+    }
+
+    private void transaction2(Jedis jedis) throws Exception {
+        Pipeline pipeline = jedis.pipelined();
+        Response<Long> response = pipeline.incr(transKey);
+        try {
+            response.get();
+        } catch (Exception e) {
+            System.out.println("Error, can not get() before sync.");
+        }
+        TimeUnit.MILLISECONDS.sleep(100);
+        Response<Long> response1 = pipeline.incrBy(transKey, -1);
+        pipeline.sync();
+        System.out.println("Incr : " + response.get());
+        System.out.println("Decr : " + response1.get());
     }
 
     @Test
@@ -83,8 +105,7 @@ public class Transaction {
                 public void run() {
                     try {
                         Jedis jedis = injector.getProvider(JedisPool.class).get().getResource();
-                        final Pipeline pipeline = jedis.pipelined();
-                        transaction(pipeline);
+                        transaction2(jedis);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
