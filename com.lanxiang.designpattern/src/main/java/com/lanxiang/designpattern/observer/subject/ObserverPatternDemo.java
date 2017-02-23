@@ -1,4 +1,4 @@
-package com.lanxiang.designpattern.observer;
+package com.lanxiang.designpattern.observer.subject;
 
 /**
  * Created by lanxiang on 2016/12/2.
