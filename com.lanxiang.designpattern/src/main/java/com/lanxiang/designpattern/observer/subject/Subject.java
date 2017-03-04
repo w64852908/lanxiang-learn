@@ -1,4 +1,4 @@
-package com.lanxiang.designpattern.observer;
+package com.lanxiang.designpattern.observer.subject;
 
 import java.util.ArrayList;
 import java.util.List;
