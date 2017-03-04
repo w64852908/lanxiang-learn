@@ -52,7 +52,7 @@ public class CacheInterceptor implements MethodInterceptor {
                 try {
                     return invocation.proceed();
                 } catch (Throwable t) {
-                    log.error("message : " + t.getMessage() + ", cause : " + t.getCause());
+                    log.error("message : " + t + ", cause : " + t);
                     throw new RuntimeException(t);
                 }
             }

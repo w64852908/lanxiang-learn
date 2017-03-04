@@ -2,10 +2,13 @@ com/lanxiang/morphia/model/Education.class
 com/lanxiang/morphia/model/Concurrent.class
 com/lanxiang/morphia/executor/CompletionServiceExecutorImpl.class
 com/lanxiang/morphia/test/TestConcurrentClass.class
-com/lanxiang/morphia/model/UserInfo.class
 com/lanxiang/morphia/executor/Compare.class
+com/lanxiang/morphia/model/UserInfo.class
 com/lanxiang/morphia/test/TestMorphia.class
-com/lanxiang/morphia/executor/MongoInsert.class
+com/lanxiang/morphia/extendtest/ProjectFolder.class
+com/lanxiang/morphia/extendtest/SaveTest.class
 com/lanxiang/morphia/module/MongoModule.class
+com/lanxiang/morphia/extendtest/Folder.class
+com/lanxiang/morphia/executor/MongoInsert.class
 com/lanxiang/morphia/executor/NormalWayToInsertImpl.class
 com/lanxiang/morphia/model/MongoPersistenceObject.class

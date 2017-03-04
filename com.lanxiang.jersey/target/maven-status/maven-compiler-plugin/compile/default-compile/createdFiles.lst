@@ -1,2 +1,5 @@
-Service.class
-com/lanxiang/jersey/HelloResource.class
+com/lanxiang/jersey/client/rest/impl/RestServiceImpl.class
+com/lanxiang/jersey/client/rest/impl/AccountServiceImpl.class
+com/lanxiang/jersey/client/rest/AccountService.class
+com/lanxiang/jersey/client/model/Account.class
+com/lanxiang/jersey/guice/JerseyModule.class

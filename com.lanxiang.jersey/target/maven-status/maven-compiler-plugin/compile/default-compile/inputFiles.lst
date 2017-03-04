@@ -1,2 +1,5 @@
-/Users/lanjing/Documents/work/IdeaProject/lanxiang-learn/com.lanxiang.jersey/src/main/java/com/lanxiang/jersey/HelloResource.java
-/Users/lanjing/Documents/work/IdeaProject/lanxiang-learn/com.lanxiang.jersey/src/main/java/Service.java
+/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.jersey/src/main/java/com/lanxiang/jersey/client/rest/impl/AccountServiceImpl.java
+/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.jersey/src/main/java/com/lanxiang/jersey/client/rest/AccountService.java
+/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.jersey/src/main/java/com/lanxiang/jersey/client/rest/impl/RestServiceImpl.java
+/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.jersey/src/main/java/com/lanxiang/jersey/guice/JerseyModule.java
+/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.jersey/src/main/java/com/lanxiang/jersey/client/model/Account.java

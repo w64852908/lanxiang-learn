@@ -23,7 +23,7 @@ public class LoadingCacheStudy {
                 //设置缓存的移除通知
                 .removalListener(new RemovalListener<Object, Object>() {
                     public void onRemoval(RemovalNotification<Object, Object> notification) {
-                        System.out.println(notification.getKey() + " was removed, cause is " + notification.getCause());
+                        System.out.println(notification.getKey() + " was removed, cause is " + notification);
                     }
                 })
                 //build方法中可以指定CacheLoader,在缓存不存在时通过CacheLoader的实现自动加载缓存
@@ -65,7 +65,7 @@ public class LoadingCacheStudy {
                 //设置缓存的移除通知
                 .removalListener(new RemovalListener<Object, Object>() {
                     public void onRemoval(RemovalNotification<Object, Object> notification) {
-                        System.out.println(notification.getKey() + " was removed, cause is " + notification.getCause());
+                        System.out.println(notification.getKey() + " was removed, cause is " + notification);
                     }
                 })
                 .build();

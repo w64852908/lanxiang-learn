@@ -46,7 +46,7 @@ public abstract class AbstractAsyncConsumer {
             declareQueue();
             bindQueue();
         } catch (IOException e) {
-            log.error("Create channel failed, " + e.getCause().getMessage());
+            log.error("Create channel failed, " + e);
         }
         consumer = new DefaultConsumer(channel) {
             @Override
