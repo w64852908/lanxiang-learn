@@ -14,6 +14,6 @@ public class ApiServer extends WebServer {
         String classes = url.getFile();
         File targetClassesFolder = new File(classes);
         String parentPath = targetClassesFolder.getParentFile().getParent();
-        start(9090, parentPath + "/src/main/webapp");
+        start(9091, parentPath + "/src/main/webapp");
     }
 }

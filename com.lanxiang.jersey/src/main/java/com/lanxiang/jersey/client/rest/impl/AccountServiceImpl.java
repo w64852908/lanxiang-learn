@@ -1,7 +1,10 @@
 package com.lanxiang.jersey.client.rest.impl;
 
+import com.lanxiang.jersey.client.api.RestApi;
 import com.lanxiang.jersey.client.model.Account;
+import com.lanxiang.jersey.client.model.SystemInfo;
 import com.lanxiang.jersey.client.rest.AccountService;
+import com.lanxiang.jersey.client.remote.InfoService;
 import io.swagger.annotations.ApiParam;
 
 import javax.annotation.PostConstruct;
@@ -18,10 +21,13 @@ public class AccountServiceImpl implements AccountService {
 
     private static AtomicLong counter;
 
+    private InfoService infoService;
+
     @PostConstruct
     public void init() {
         counter = new AtomicLong(0);
         fillAccountList();
+        infoService = RestApi.getService(InfoService.class);
     }
 
     private void fillAccountList() {
@@ -74,5 +80,10 @@ public class AccountServiceImpl implements AccountService {
             }
         }
         return result;
+    }
+
+    @Override
+    public SystemInfo remoteEnvironment() {
+        return infoService.getSystemInfo();
     }
 }

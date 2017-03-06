@@ -1,6 +1,7 @@
 package com.lanxiang.jersey.client.rest;
 
 import com.lanxiang.jersey.client.model.Account;
+import com.lanxiang.jersey.client.model.SystemInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -32,4 +33,9 @@ public interface AccountService {
     @Path("create/account")
     @ApiOperation("创建用户")
     List<Account> create(@ApiParam Account account);
+
+    @GET
+    @Path("remote/system")
+    @ApiOperation("其他server的环境信息")
+    SystemInfo remoteEnvironment();
 }

@@ -1,0 +1,4 @@
+com.lanxiang.guice.CoreModule
+com.lanxiang.core.web.guice.CoreWebModule
+com.lanxiang.guice.JerseyModule
+com.lanxiang.apidoc.guice.ApiDocModule

@@ -1,6 +1,5 @@
 package com.lanxiang.jersey.guice;
 
-import com.google.inject.AbstractModule;
 import com.google.inject.PrivateModule;
 import com.lanxiang.jersey.client.rest.AccountService;
 import com.lanxiang.jersey.client.rest.impl.AccountServiceImpl;
