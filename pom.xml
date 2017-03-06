@@ -161,11 +161,11 @@
             <artifactId>jersey-proxy-client</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.glassfish.jersey.core</groupId>-->
-            <!--<artifactId>jersey-server</artifactId>-->
-            <!--<version>${jersey.version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.connectors</groupId>
             <artifactId>jersey-apache-connector</artifactId>
@@ -295,6 +295,14 @@
             <artifactId>jetty-servlet</artifactId>
             <version>${jetty.version}</version>
         </dependency>
+
+        <!-- hk2 -->
+        <dependency>
+            <groupId>org.glassfish.hk2</groupId>
+            <artifactId>hk2-utils</artifactId>
+            <version>2.4.0-b06</version>
+        </dependency>
+
     </dependencies>
 
     <build>

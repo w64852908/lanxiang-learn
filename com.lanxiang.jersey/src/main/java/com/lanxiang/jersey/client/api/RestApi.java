@@ -25,7 +25,7 @@ import java.util.Map;
 @Slf4j
 public class RestApi {
 
-    private final static String REST_URL = "http://localhost:9091/";
+    private final static String REST_URL = "http://localhost:9090/";
 
     private static Map<Class<?>, Object> restInstance = new HashMap<>();
 
