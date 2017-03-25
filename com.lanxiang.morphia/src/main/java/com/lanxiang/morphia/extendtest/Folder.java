@@ -1,55 +1,35 @@
 package com.lanxiang.morphia.extendtest;
 
-import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Id;
-import org.mongodb.morphia.annotations.Indexed;
+
+import java.util.Set;
 
 /**
  * Created by lanxiang on 2017/2/23.
  */
 
 @Entity(value = "Folder")
-public class Folder {
+public class Folder extends BasicFolder {
 
-    @Id @Indexed
-    protected ObjectId id;
+    private Set<Integer> authority;
 
-    protected String name;
-
-    protected Integer level;
-
-    protected Integer type;
-
-    public ObjectId getId() {
-        return id;
+    public Set<Integer> getAuthority() {
+        return authority;
     }
 
-    public void setId(ObjectId id) {
-        this.id = id;
+    public void setAuthority(Set<Integer> authority) {
+        this.authority = authority;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
+    @Override
+    public String toString() {
+        return "Folder{" +
+                "class=" + this.getClass() +
+                ", id=" + id +
+                ", name=" + name +
+                ", level=" + level +
+                ", type=" + type +
+                ", authority=" + authority +
+                '}';
     }
 }

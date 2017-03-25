@@ -24,7 +24,7 @@ public class TestTransaction {
 
     @Test
     public void run() {
-        User user = new User(null, "lanxiang", 20);
+        User user = new User(null, "lanxiang", 127);
         userDAO.createUser(user);
     }
 
