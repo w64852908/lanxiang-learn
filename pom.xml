@@ -27,6 +27,7 @@
         <module>com.lanxiang.jvm</module>
         <module>com.lanxiang.core</module>
         <module>com.lanxiang.jetty</module>
+        <module>com.lanxiang.exercise</module>
     </modules>
 
     <properties>

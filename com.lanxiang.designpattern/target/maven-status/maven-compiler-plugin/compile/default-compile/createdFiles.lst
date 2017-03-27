@@ -2,6 +2,7 @@ com/lanxiang/designpattern/handwrite/Exercise$EagerSingleton.class
 com/lanxiang/designpattern/factory/FactoryPattern$Rectangle.class
 com/lanxiang/designpattern/singleton/SingletonDemo.class
 com/lanxiang/designpattern/serviceLocator/Service2.class
+com/lanxiang/designpattern/adapter/AdapterPattern$AdvancedMediaPlayer.class
 com/lanxiang/designpattern/strategy/StrategyPattern$1.class
 lanxiang/designpattern/proxy/dynamic/InvocationHandlerProxy.class
 lanxiang/designpattern/proxy/dynamic/DynamicProxyPattern$Hello.class
@@ -10,12 +11,14 @@ com/lanxiang/designpattern/observer/ObserverPattern$Watched.class
 com/lanxiang/designpattern/chainOfResponsibility/AbstractLogger.class
 com/lanxiang/designpattern/handwrite/Exercise.class
 com/lanxiang/designpattern/handwrite/Exercise$EnumSingleton$Singleton.class
+com/lanxiang/designpattern/adapter/AdapterPattern$Mp4Player.class
 lanxiang/designpattern/proxy/dynamic/DynamicProxyPattern$DynamicHello.class
 com/lanxiang/designpattern/singleton/Singleton3.class
 com/lanxiang/designpattern/chainOfResponsibility/ChainPatternDemo.class
 com/lanxiang/designpattern/decorator/DecoratorPattern$Circle.class
 com/lanxiang/designpattern/factory/FactoryPattern$ShapeFactory.class
 com/lanxiang/designpattern/chainOfResponsibility/ErrorLogger.class
+com/lanxiang/designpattern/adapter/AdapterPattern$VlcPlayer.class
 com/lanxiang/designpattern/callback/CallBackFunc$UserB.class
 com/lanxiang/designpattern/callback/CallBackFunc$BlockA.class
 com/lanxiang/designpattern/factory/FactoryPattern$Shape.class
@@ -35,6 +38,7 @@ com/lanxiang/designpattern/handwrite/Exercise$IHello.class
 com/lanxiang/designpattern/singleton/Singleton5$SingletonHolder.class
 com/lanxiang/designpattern/strategy/StrategyPattern.class
 com/lanxiang/designpattern/serviceLocator/Cache.class
+com/lanxiang/designpattern/adapter/AdapterPattern$MediaPlayer.class
 com/lanxiang/designpattern/serviceLocator/Service.class
 com/lanxiang/designpattern/singleton/Singleton6.class
 com/lanxiang/designpattern/decorator/DecoratorPattern.class
@@ -49,10 +53,13 @@ com/lanxiang/designpattern/callback/CallBackFunc.class
 lanxiang/designpattern/proxy/staticp/StaticProxyPattern.class
 com/lanxiang/designpattern/handwrite/Exercise$Hello.class
 com/lanxiang/designpattern/handwrite/Exercise$InvocationProxy.class
+com/lanxiang/designpattern/adapter/AdapterPattern$AudioPlayer.class
 com/lanxiang/designpattern/handwrite/Exercise$Greeting.class
 com/lanxiang/designpattern/observer/ObserverPattern$Watcher.class
 com/lanxiang/designpattern/serviceLocator/Service1.class
+com/lanxiang/designpattern/adapter/AdapterPattern$MediaAdapter.class
 com/lanxiang/designpattern/callback/CallBackFunc$UserB$1.class
+com/lanxiang/designpattern/adapter/AdapterPattern.class
 com/lanxiang/designpattern/observer/ObserverPattern$ConcreteWatched.class
 com/lanxiang/designpattern/handwrite/Exercise$EnumSingleton.class
 lanxiang/designpattern/proxy/dynamic/DynamicProxyPattern.class

@@ -1,10 +1,17 @@
 com/lanxiang/javaadvanced/concurrent/HashEntryTest$LinkList.class
 com/lanxiang/javaadvanced/callback/Wang$1.class
 com/lanxiang/javaadvanced/compare/User.class
+com/lanxiang/javaadvanced/concurrent/ExecutorsTest$1.class
+com/lanxiang/javaadvanced/concurrent/ListTest.class
 com/lanxiang/javaadvanced/compare/UserComparator.class
+com/lanxiang/javaadvanced/concurrent/ThreadLocalTest.class
 com/lanxiang/javaadvanced/callback/Run.class
 com/lanxiang/javaadvanced/callback/CallBack.class
 com/lanxiang/javaadvanced/concurrent/HashEntryTest$Node.class
+com/lanxiang/javaadvanced/concurrent/CountDownLatchTest.class
+com/lanxiang/javaadvanced/concurrent/CountDownLatchTest$1.class
+com/lanxiang/javaadvanced/concurrent/ThreadLocalTest$1.class
+com/lanxiang/javaadvanced/concurrent/ExecutorsTest.class
 com/lanxiang/javaadvanced/callback/Lee.class
 com/lanxiang/javaadvanced/concurrent/HashEntryTest.class
 com/lanxiang/javaadvanced/callback/Wang.class
