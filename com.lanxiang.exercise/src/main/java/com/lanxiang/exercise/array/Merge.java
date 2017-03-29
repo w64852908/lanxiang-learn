@@ -5,6 +5,7 @@ import org.junit.Test;
 /**
  * Created by lanjing on 2017/3/28.
  */
+@SuppressWarnings("ALL")
 public class Merge {
 
     public int[] merge(int[] arr1, int[] arr2) {
