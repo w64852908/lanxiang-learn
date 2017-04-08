@@ -9,13 +9,13 @@ import java.util.Arrays;
  */
 public class Reverse {
 
-    public Node reverse(Node head) {
+    public ListNode reverse(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        Node newHead = new Node(-1);
-        Node p = head;
-        Node q;
+        ListNode newHead = new ListNode(-1);
+        ListNode p = head;
+        ListNode q;
         while (p != null) {
             q = p.next;
             p.next = newHead.next;
@@ -27,7 +27,7 @@ public class Reverse {
 
     @Test
     public void run() {
-        Node head = LinkedListUtil.generate(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        ListNode head = LinkedListUtil.generate(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
         LinkedListUtil.show(head);
         head = reverse(head);
         LinkedListUtil.show(head);

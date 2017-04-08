@@ -9,10 +9,10 @@ import java.util.Arrays;
  */
 public class MergeLinkedList {
 
-    public Node merge(Node p1, Node p2) {
-        Node newHead = new Node(-1);
-        Node p = newHead;
-        Node q;
+    public ListNode merge(ListNode p1, ListNode p2) {
+        ListNode newHead = new ListNode(-1);
+        ListNode p = newHead;
+        ListNode q;
         while (p1 != null && p2 != null) {
             if (p1.val > p2.val) {
                 q = p2.next;
@@ -37,9 +37,9 @@ public class MergeLinkedList {
 
     @Test
     public void run() {
-        Node p1 = LinkedListUtil.generate(Arrays.asList(1, 3, 5, 7, 9));
-        Node p2 = LinkedListUtil.generate(Arrays.asList(2, 4, 6, 8, 10));
-        Node p = merge(p1, p2);
+        ListNode p1 = LinkedListUtil.generate(Arrays.asList(1, 3, 5, 7, 9));
+        ListNode p2 = LinkedListUtil.generate(Arrays.asList(2, 4, 6, 8, 10));
+        ListNode p = merge(p1, p2);
         LinkedListUtil.show(p);
     }
 }
