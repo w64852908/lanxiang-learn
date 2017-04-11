@@ -7,22 +7,26 @@ import java.util.List;
  */
 public class LinkedListUtil {
 
-    public static Node generate(List<Integer> arr) {
+    public static ListNode generate(List<Integer> arr) {
         if (arr == null || arr.size() == 0) {
-            return new Node(-1);
+            return new ListNode(-1);
         }
-        Node preHead = new Node(-1);
-        Node p = preHead;
+        ListNode preHead = new ListNode(-1);
+        ListNode p = preHead;
         for (Integer anArr : arr) {
-            p.next = new Node(anArr);
+            p.next = new ListNode(anArr);
             p = p.next;
         }
         return preHead.next;
     }
 
-    public static void show(Node head) {
+    public static void show(ListNode head) {
         while (head != null) {
-            System.out.print(head.val + " ");
+            if (head.next != null) {
+                System.out.print(head.val + "->");
+            } else {
+                System.out.println(head.val);
+            }
             head = head.next;
         }
         System.out.println();
