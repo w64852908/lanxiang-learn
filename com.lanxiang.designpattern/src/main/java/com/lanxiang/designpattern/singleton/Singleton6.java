@@ -13,11 +13,30 @@ import lombok.extern.slf4j.Slf4j;
  * 在实际工作中，也很少用。不能通过 reflection attack 来调用私有构造方法。
  */
 @Slf4j
-public enum Singleton6 {
+public class Singleton6 {
 
-    INSTANCE;
+    private static Singleton6 instance;
 
-    public void whateverMethod() {
-        log.info("Build Singleton6 instance");
+    private Singleton6() {
+
+    }
+
+    public static Singleton6 getInstance() {
+        return Singleton.INSTANCE.getHelloUtil();
+    }
+
+    enum Singleton {
+
+        INSTANCE;
+
+        private Singleton6 singleton;
+
+        Singleton() {
+            singleton = new Singleton6();
+        }
+
+        public Singleton6 getHelloUtil() {
+            return this.singleton;
+        }
     }
 }
