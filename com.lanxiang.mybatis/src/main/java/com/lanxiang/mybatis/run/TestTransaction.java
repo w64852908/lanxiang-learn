@@ -32,7 +32,7 @@ public class TestTransaction {
     public void run2() {
         List<User> userList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            User user = new User(null, "lanxiang" + i, 23);
+            User user = new User((long) i, "lanxiang" + i, 23);
             userList.add(user);
         }
         userDAO.createUsers(userList);

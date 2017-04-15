@@ -4,10 +4,7 @@ import com.lanxiang.mybatis.dao.UserDAO;
 import com.lanxiang.mybatis.mapper.UserMapper;
 import com.lanxiang.mybatis.model.User;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSessionManager;
-import org.apache.ibatis.session.TransactionIsolationLevel;
-import org.mybatis.guice.transactional.Isolation;
 import org.mybatis.guice.transactional.Transactional;
 
 import javax.inject.Inject;

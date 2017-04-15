@@ -17,7 +17,8 @@ public class RunTest {
         userDAO = new UserDAOImplBySqlSession();
         User user = new User();
         user.setName("兰兢");
-        user.setSex(1);
+        user.setPosition(0L);
+        user.setAge(23);
         userDAO.insert(user);
     }
 }

@@ -27,6 +27,6 @@ public class MongoModule extends PrivateModule {
     Datastore provideDataStore() {
         Morphia morphia = new Morphia();
         morphia.mapPackage("com.lanxiang.morphia.model");
-        return morphia.createDatastore(new MongoClient(), "learn_wbg_demo");
+        return morphia.createDatastore(new MongoClient(), "files");
     }
 }

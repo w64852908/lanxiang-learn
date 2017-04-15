@@ -46,7 +46,7 @@ public class CommonsCompressTest {
                             try {
                                 is = new FileInputStream(file);
                                 byte[] buffer = new byte[1024 * 5];
-                                int len = -1;
+                                int len;
                                 while ((len = is.read(buffer)) != -1) {
                                     //把缓冲区的字节写入到ZipArchiveEntry
                                     zaos.write(buffer, 0, len);

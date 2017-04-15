@@ -38,8 +38,8 @@
         </javaClientGenerator>
 
 
-        <table domainObjectName="Message" tableName="message"></table>
-        <table domainObjectName="Student" tableName="student"></table>
-        <table domainObjectName="User" tableName="User"></table>
+        <!--<table domainObjectName="Message" tableName="message"></table>-->
+        <!--<table domainObjectName="Student" tableName="student"></table>-->
+        <!--<table domainObjectName="User" tableName="User"></table>-->
     </context>
 </generatorConfiguration>

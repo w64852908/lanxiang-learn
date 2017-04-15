@@ -33,6 +33,11 @@ public class UserDAOImplBySqlSession implements UserMapper {
         return 0;
     }
 
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return 0;
+    }
+
     public int deleteByPrimaryKey(Integer id) {
         return 0;
     }
@@ -61,6 +66,11 @@ public class UserDAOImplBySqlSession implements UserMapper {
     }
 
     public List<User> selectByExample(UserExample example) {
+        return null;
+    }
+
+    @Override
+    public User selectByPrimaryKey(Long id) {
         return null;
     }
 
