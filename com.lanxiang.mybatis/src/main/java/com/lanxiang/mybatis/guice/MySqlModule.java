@@ -46,7 +46,7 @@ public abstract class MySqlModule extends PrivateModule {
         myBatisProperties.setProperty("JDBC.url",
                 "jdbc:mysql://127.0.0.1:3306/lanxiangtest?useUnicode=true&amp;characterEncoding=UTF-8");
         myBatisProperties.setProperty("JDBC.username", "root");
-        myBatisProperties.setProperty("JDBC.password", "123456");
+        myBatisProperties.setProperty("JDBC.password", "lanxiang1993");
         myBatisProperties.setProperty("JDBC.autoCommit", "true");
         return myBatisProperties;
     }

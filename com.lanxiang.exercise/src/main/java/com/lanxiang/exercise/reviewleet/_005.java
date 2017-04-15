@@ -16,22 +16,15 @@ public class _005 {
 
 
     public String longestPalindrome(String s) {
-        if (s.isEmpty()) {
+        if (s == null || s.length() == 0) {
             return null;
         }
-        if (s.length() == 0) {
-            return s;
-        }
         String result = s.substring(0, 1);
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length() - 1; i++) {
             String temp = getLongest(s, i, i);
-            if (temp.length() > result.length()) {
-                result = temp;
-            }
+            result = temp.length() > result.length() ? temp : result;
             temp = getLongest(s, i, i + 1);
-            if (temp.length() > result.length()) {
-                result = temp;
-            }
+            result = temp.length() > result.length() ? temp : result;
         }
         return result;
     }
@@ -44,9 +37,11 @@ public class _005 {
         return s.substring(left + 1, right);
     }
 
+
     @Test
     public void run() {
-        String s1 = "abcabc";
+//        String s1 = "abcabc";
+        String s1 = "abccba";
         String s2 = "xxzfefgabccbagfeasderwqwe";
         String s3 = "sadfxvagertdsgasdfaefojtiwqehrwebfasjdbkasvkdfahjsfdgweiuwqyeryqwyeryuiwuiuyiiuyiudasfhasdfb";
         System.out.println(longestPalindrome(s1));

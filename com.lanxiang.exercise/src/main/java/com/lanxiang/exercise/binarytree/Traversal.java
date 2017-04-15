@@ -2,6 +2,7 @@ package com.lanxiang.exercise.binarytree;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.w3c.dom.Node;
 
 import java.util.*;
 
@@ -55,6 +56,34 @@ public class Traversal {
             } else {
                 p = stack.pop();
             }
+        }
+        return result;
+    }
+
+    /**
+     * 后续,左右根
+     */
+    private List<Integer> nextOrderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        //存储逆序的结果
+        Stack<TreeNode> output = new Stack<>();
+        TreeNode p = root;
+        while (!stack.isEmpty() || p != null) {
+            if (p != null) {
+                output.push(p);
+                stack.push(p);
+                p = p.right;
+            } else {
+                p = stack.pop();
+                p = p.left;
+            }
+        }
+        while (output.size() > 0) {
+            result.add(output.pop().val);
         }
         return result;
     }
@@ -137,6 +166,11 @@ public class Traversal {
     @Test
     public void preOrder() {
         System.out.println(preOrderTraversal(root));
+    }
+
+    @Test
+    public void nextOrder() {
+        System.out.println(nextOrderTraversal(root));
     }
 
     @Test

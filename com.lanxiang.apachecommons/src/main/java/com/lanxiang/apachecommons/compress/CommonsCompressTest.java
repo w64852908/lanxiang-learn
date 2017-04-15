@@ -18,12 +18,10 @@ public class CommonsCompressTest {
 
     @Test
     public void testZip() {
-        String path = "/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.apachecommons" +
-                "/src/main/resources/txts";
+        String path = "/Users/lanjing/Downloads";
         File filePath = new File(path);
         File[] files = filePath.listFiles();
-        String zipFilePath = "/Users/lanxiang/Documents/ideaworkspace/lanxiang-learn/com.lanxiang.apachecommons" +
-                "/src/main/resources/compress.zip";
+        String zipFilePath = "/Users/lanjing/Desktop/压缩.zip";
         compressFilesToZip(files, zipFilePath);
     }
 
