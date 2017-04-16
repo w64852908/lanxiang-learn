@@ -22,7 +22,7 @@ public class ZipFolder {
 
     private final static String output = "/Users/lanjing/Desktop/压缩.zip";
 
-    private final long maxBytesPersec = 2 * 1024 * 1024;
+    private final static long maxBytesPersec = 2 * 1024 * 1024;
 
     @Test
     public void run() throws IOException {
@@ -47,7 +47,7 @@ public class ZipFolder {
         }
         List<File> pathList = new ArrayList<>();
         for (File child : children) {
-//            System.out.println("{" + child.toString() + "}");
+            System.out.println("{" + child.toString() + "}");
             if (child.isDirectory()) {
                 pathList.add(child);
                 //给压缩包添加文件夹的目录结构,如果没有对应的目录结构会解压出错
@@ -69,7 +69,7 @@ public class ZipFolder {
                     long startTime = System.currentTimeMillis();
                     while ((len = is.read(buffer)) != -1) {
                         total += len;
-                        limitSpeed(total, startTime);
+//                        limitSpeed(total, startTime);
                         zipArchiveOutputStream.write(buffer, 0, len);
                     }
                     zipArchiveOutputStream.closeArchiveEntry();
