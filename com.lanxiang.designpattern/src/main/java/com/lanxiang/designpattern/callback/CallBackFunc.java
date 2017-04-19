@@ -7,8 +7,8 @@ import org.junit.Test;
  */
 public class CallBackFunc {
 
-    static interface CallBack {
-        void callBack(String string);
+    static interface CallBack<E> {
+        void callBack(E thing);
     }
 
     static class BlockA {
@@ -23,7 +23,7 @@ public class CallBackFunc {
         }
     }
 
-    static class UserB implements CallBack {
+    static class UserB implements CallBack<String> {
 
         private BlockA blockA;
 
@@ -41,7 +41,7 @@ public class CallBackFunc {
             doOtherThings();
         }
 
-        private void doOtherThings(){
+        private void doOtherThings() {
             System.out.println("UserB处理其他事情去了");
         }
 
@@ -52,10 +52,10 @@ public class CallBackFunc {
     }
 
     @Test
-    public void run(){
+    public void run() {
         UserB userB = new UserB(new BlockA());
         userB.receiveAnswer();
-        while (Thread.activeCount() > 2){
+        while (Thread.activeCount() > 2) {
 
         }
     }

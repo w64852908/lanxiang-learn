@@ -9,6 +9,6 @@ public class EnumSingletonRun {
 
     @Test
     public void run() {
-        System.out.println(EnumSingleton1.INSTANCE.getValue());
+        System.out.println(EnumSingleton.INSTANCE.getValue());
     }
 }

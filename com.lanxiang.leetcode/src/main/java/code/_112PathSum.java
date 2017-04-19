@@ -27,7 +27,7 @@ import java.util.Stack;
  *
  * 思路:找所有根节点到叶子节点的path,二叉树的前序遍历
  */
-public class _113PathSum {
+public class _112PathSum {
 
     //维护一个统计当前值的变量
     private Integer curr = 0;
