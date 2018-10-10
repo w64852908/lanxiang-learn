@@ -17,8 +17,6 @@ public class EventBus {
 
     private BlockingQueue<Object> queue;
 
-    public Consumer consumer;
-
     public EventBus() {
         this.register = new HashMap<>();
         queue = new LinkedBlockingDeque<>();

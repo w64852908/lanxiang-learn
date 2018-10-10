@@ -12,16 +12,17 @@ public class Demo1 {
     @Test
     public void testEventBus(){
         EventBus eventBus = new EventBus();
-        eventBus.register(new Event());
+        eventBus.register(new EventService());
         eventBus.post("lanxiang ooooooo~~~~~");
     }
-
 }
 
 
-class Event {
+class EventService {
+
     @Subscribe
     public void sub(String message) {
         System.out.println(this.toString() + " : " +message);
     }
+
 }

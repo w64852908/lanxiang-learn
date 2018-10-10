@@ -13,7 +13,7 @@ public class Demo2 {
     @Test
     public void testAysncEventBus() {
         AsyncEventBus eventBus = new AsyncEventBus(Executors.newFixedThreadPool(3));
-        eventBus.register(new Event());
+        eventBus.register(new EventService());
         String message = "I have sent ";
         for (int i = 0; i < 100; i++) {
             eventBus.post(message + i + " numbers.");
