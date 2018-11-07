@@ -8,9 +8,9 @@ import java.util.Stack;
 
 /**
  * Created by lanjing on 2018/10/30.
- *
+ * <p>
  * 要求：二叉树前序遍历
- *
+ * <p>
  * 思路：用栈存右子树节点，p变量遍历左子树
  */
 public class _144BinaryTreePreorderTraversal {
