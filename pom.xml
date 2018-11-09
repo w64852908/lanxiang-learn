@@ -29,6 +29,7 @@
         <module>com.lanxiang.jetty</module>
         <module>com.lanxiang.exercise</module>
         <module>com.lanxiang.fasterxml</module>
+        <module>com.lanxiang.hystrix</module>
     </modules>
 
     <properties>
@@ -304,6 +305,14 @@
             <artifactId>hk2-utils</artifactId>
             <version>2.4.0-b06</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.netflix.hystrix/hystrix-core -->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.5.12</version>
+        </dependency>
+
 
     </dependencies>
 
