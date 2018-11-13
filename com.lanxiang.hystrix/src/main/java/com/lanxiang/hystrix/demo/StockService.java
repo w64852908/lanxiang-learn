@@ -11,7 +11,7 @@ public class StockService {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("sleep thread interrupted");
         }
         return "red stock";
     }
