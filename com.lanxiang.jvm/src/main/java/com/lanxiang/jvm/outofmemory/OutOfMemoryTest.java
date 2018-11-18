@@ -15,11 +15,7 @@ public class OutOfMemoryTest {
 
     @Before
     public void init() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(1);
-    }
-
-    static class OOMObject {
-
+        TimeUnit.SECONDS.sleep(5);
     }
 
     @Test
@@ -27,8 +23,10 @@ public class OutOfMemoryTest {
 
         List<OOMObject> list = new ArrayList<>();
 
+        int i = 0;
         while (true) {
             list.add(new OOMObject());
+            System.out.println("create oom object : " + ++i);
         }
     }
 
@@ -43,6 +41,7 @@ public class OutOfMemoryTest {
         try {
             loop(deep);
         } catch (Throwable t) {
+            System.out.println();
             throw t;
         }
 
@@ -66,5 +65,24 @@ public class OutOfMemoryTest {
             }).start();
         }
     }
-    
+
+
+    @Test
+    public void testRefence() {
+        int i = 0;
+        while (true) {
+            new OOMObject();
+            System.out.println("create oom object : " + ++i);
+        }
+    }
+
+    @Test
+    public void testIntern() {
+        List<String> list = new ArrayList<>();
+        int i = 0;
+        while (true) {
+            list.add(String.valueOf(i++).intern());
+            System.out.println(list.size());
+        }
+    }
 }
