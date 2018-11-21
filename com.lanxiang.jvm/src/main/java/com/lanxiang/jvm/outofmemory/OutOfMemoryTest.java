@@ -85,4 +85,24 @@ public class OutOfMemoryTest {
             System.out.println(list.size());
         }
     }
+
+    @Test
+    public void testCpuLoad() {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < 1; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    dontStop();
+                }
+            }).start();
+        }
+        while (Thread.activeCount() > 2) {
+
+        }
+    }
 }
