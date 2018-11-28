@@ -68,6 +68,24 @@ public class _153FindMinimumInRotatedSortedArray {
         return (end + start) / 2;
     }
 
+    public int findMin2(int[] num) {
+        int start = 0;
+        int end = num.length - 1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (num[end] == num[mid]) {
+                return num[mid];
+            }
+            if (num[end] < num[mid]) {
+                start = mid + 1;
+            }
+            if (num[end] > num[mid]) {
+                end = mid;
+            }
+        }
+        return -1;
+    }
+
     @Test
     public void run() {
         int[] arr = {3, 4, 5, 1, 2};
@@ -75,6 +93,6 @@ public class _153FindMinimumInRotatedSortedArray {
 //        int[] arr = {1, 2, 3, 4, 5, 6};
 //        int[] arr = {3, 1, 2};
 //        int[] arr = {3, 4, 5, 6, 1, 2};
-        System.out.println(findMin(arr));
+        System.out.println(findMin2(arr));
     }
 }

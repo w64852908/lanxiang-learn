@@ -76,13 +76,15 @@ public class MaxHeap {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{1, 2, 3, 4, 7, 8, 9, 10, 14, 16};
+        int[] array = new int[]{5, 2, 8, 9, 2, 3, 4, 9};
         MaxHeap heap = new MaxHeap(array);
         System.out.println("执行最大堆化前堆的结构：");
-        printHeapTree(heap.heap);
+//        printHeapTree(heap.heap);
+        printHeap(heap.heap);
         heap.buildMaxHeap();
         System.out.println("执行最大堆化后堆的结构：");
-        printHeapTree(heap.heap);
+//        printHeapTree(heap.heap);
+        printHeap(heap.heap);
         heap.HeapSort();
         System.out.println("执行堆排序后数组的内容");
         printHeap(heap.heap);
@@ -101,5 +103,6 @@ public class MaxHeap {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.println();
     }
 }
