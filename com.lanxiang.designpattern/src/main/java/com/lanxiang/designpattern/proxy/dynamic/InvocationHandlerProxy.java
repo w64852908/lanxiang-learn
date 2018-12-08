@@ -1,4 +1,4 @@
-package lanxiang.designpattern.proxy.dynamic;
+package com.lanxiang.designpattern.proxy.dynamic;
 
 import org.junit.Test;
 
@@ -12,41 +12,40 @@ import java.util.Date;
  */
 public class InvocationHandlerProxy {
 
-    static interface IHello {
+    interface IHello {
         void sayHello();
     }
 
-    static class Hello implements IHello {
+    class Hello implements IHello {
 
         @Override
         public void sayHello() {
-            System.out.println("Hello there");
+            System.out.println("hello world");
         }
     }
 
-    static class InvocationProxy implements InvocationHandler {
+    class HelloProxy implements InvocationHandler {
 
-        //目标对象
-        private Object target;
+        private IHello hello;
 
-        public Object bind(Object target) {
-            this.target = target;
-            return Proxy.newProxyInstance(this.target.getClass().getClassLoader(), this.target.getClass().getInterfaces(), this);
+        public HelloProxy(IHello hello) {
+            this.hello = hello;
         }
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            Object result;
-            System.out.println("Before the target method : " + new Date().getTime());
-            result = method.invoke(this.target, args);
-            System.out.println("After the target method : " + new Date().getTime());
-            return result;
+            System.out.println("welcome");
+            return method.invoke(hello, args);
+        }
+
+        public IHello getProxy() {
+            return (IHello) Proxy.newProxyInstance(hello.getClass().getClassLoader(), hello.getClass().getInterfaces(), this);
         }
     }
 
     @Test
     public void run() {
-        IHello hello = (IHello) new InvocationProxy().bind(new Hello());
+        IHello hello = new HelloProxy(new Hello()).getProxy();
         hello.sayHello();
     }
 }

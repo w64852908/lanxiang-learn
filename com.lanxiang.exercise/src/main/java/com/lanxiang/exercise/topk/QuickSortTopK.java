@@ -11,45 +11,37 @@ import java.util.Arrays;
 public class QuickSortTopK {
 
     public int[] getTopK(int[] nums, int k) {
-        if (k > nums.length) {
+        if (null == nums || nums.length == 0 || k > nums.length) {
             return null;
         }
-        int low = 0, high = nums.length - 1;
-        int mid = divide(nums, low, high);
-        //划分位置不是K则继续处理
+        //获取第一次排序完的中轴
+        int mid = divide(nums, 0, nums.length - 1);
+        //中轴和k的位置不一致
         while (mid != k) {
-            //k在分划点后面部分
-            if (k > mid) {
-                low = mid + 1;
+            //如果中轴在k的左边，说明需要往右边排序，反之
+            if (mid < k) {
+                mid = divide(nums, mid + 1, nums.length - 1);
             } else {
-                high = mid;
+                mid = divide(nums, 0, mid - 1);
             }
-            //K在分划点前面部分
-            mid = divide(nums, low, high);
         }
         return Arrays.copyOf(nums, k);
     }
 
-    private int divide(int[] nums, int low, int high) {
-        //数组的第一个数作为中轴
-        int temp = nums[low];
-        while (low < high) {
-            //从右到左,找到第一个比中轴小的数
-            while (low < high && nums[high] >= temp) {
-                high--;
+    private int divide(int[] nums, int left, int right) {
+        int temp = nums[left];
+        while (left < right) {
+            while (left < right && nums[right] >= temp) {
+                right--;
             }
-            //比中轴小的数移到左边
-            nums[low] = nums[high];
-            //从左到右,找到第一个比中轴大的数
-            while (low < high && nums[low] <= temp) {
-                low++;
+            nums[left] = nums[right];
+            while (left < right && nums[left] <= temp) {
+                left++;
             }
-            //比中轴大的数移到右边
-            nums[high] = nums[low];
+            nums[right] = nums[left];
         }
-        //位置移动完一轮后,记录中轴最后的值
-        nums[low] = temp;
-        return low;
+        nums[left] = temp;
+        return left;
     }
 
     @Test

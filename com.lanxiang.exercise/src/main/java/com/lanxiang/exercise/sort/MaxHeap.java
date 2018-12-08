@@ -39,7 +39,7 @@ public class MaxHeap {
             largest = right;
         }
         //如果largest等于i说明i是最大元素 largest超出heap范围说明不存在比i节点大的子女
-        if (largest == i || largest >= heapSize) {
+        if (largest == i || largest > heapSize) {
             return;
         }
         //交换i与largest对应的元素位置，在largest位置递归调用maxify
@@ -76,18 +76,18 @@ public class MaxHeap {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{5, 2, 8, 9, 2, 3, 4, 9};
+        int[] array = new int[]{46, 79, 56, 38, 40, 84};
         MaxHeap heap = new MaxHeap(array);
         System.out.println("执行最大堆化前堆的结构：");
-//        printHeapTree(heap.heap);
-        printHeap(heap.heap);
+        printArray(heap.heap);
         heap.buildMaxHeap();
         System.out.println("执行最大堆化后堆的结构：");
-//        printHeapTree(heap.heap);
-        printHeap(heap.heap);
+        printHeapTree(heap.heap);
+        System.out.println();
+        printArray(heap.heap);
         heap.HeapSort();
         System.out.println("执行堆排序后数组的内容");
-        printHeap(heap.heap);
+        printArray(heap.heap);
     }
 
     private static void printHeapTree(int[] array) {
@@ -99,7 +99,7 @@ public class MaxHeap {
         }
     }
 
-    private static void printHeap(int[] array) {
+    private static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }

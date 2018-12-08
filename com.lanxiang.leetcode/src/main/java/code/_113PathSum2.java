@@ -25,43 +25,45 @@ import java.util.List;
  * [5,4,11,2],
  * [5,8,4,5]
  * ]
- *
+ * <p>
  * 要求:获取所有二叉树的路径和与目标值相等的路径,解法与112一致
  */
 public class _113PathSum2 {
 
-    private Integer curr = 0;
+    private int curr;
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        List<List<Integer>> result = new ArrayList<>();
-        if (root == null) {
-            return result;
+        List<List<Integer>> res = new ArrayList<>();
+        if (null == root) {
+            return res;
         }
-        List<Integer> temp = new ArrayList<>();
-        recursive(root, sum, temp, result);
-        return result;
+        recursive(root, sum, new ArrayList<Integer>(), res);
+        return res;
     }
 
-    private void recursive(TreeNode p, int sum, List<Integer> temp, List<List<Integer>> result) {
-        curr += p.val;
+    private void recursive(TreeNode p, int sum, List<Integer> temp, List<List<Integer>> res) {
+        if (null == p) {
+            return;
+        }
+        curr = curr + p.val;
         temp.add(p.val);
-        if (p.left == null && p.right == null) {
-            if (curr.equals(sum)) {
-                result.add(new ArrayList<>(temp));
-                return;
+        if (null == p.left && null == p.right) {
+            if (sum == curr) {
+                res.add(new ArrayList<>(temp));
             }
         }
         if (p.left != null) {
-            recursive(p.left, sum, temp, result);
-            curr -= temp.get(temp.size() - 1);
+            recursive(p.left, sum, temp, res);
+            curr = curr - temp.get(temp.size() - 1);
             temp.remove(temp.size() - 1);
         }
         if (p.right != null) {
-            recursive(p.right, sum, temp, result);
-            curr -= temp.get(temp.size() - 1);
+            recursive(p.right, sum, temp, res);
+            curr = curr - temp.get(temp.size() - 1);
             temp.remove(temp.size() - 1);
         }
     }
+
 
     @Test
     public void run() {
