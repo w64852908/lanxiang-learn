@@ -3,6 +3,8 @@ package com.lanxiang.exercise.sort;
 import com.lanxiang.exercise.util.ArrayOutputUtil;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * Created by lanjing on 2018/12/7.
  */
@@ -84,5 +86,7 @@ public class Sorts {
         heap.buildMaxHeap();
         heap.heapSort();
         ArrayOutputUtil.printArray(heap.output());
+
+        ArrayOutputUtil.printArray(Arrays.copyOf(arr, 100));
     }
 }
