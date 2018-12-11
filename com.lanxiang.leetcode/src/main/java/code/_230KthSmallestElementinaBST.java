@@ -48,7 +48,7 @@ public class _230KthSmallestElementinaBST {
         if (null == root || k == 0) {
             return -1;
         }
-        Stack<TreeNode> stack = new Stack();
+        Stack<TreeNode> stack = new Stack<>();
         TreeNode p = root;
         while (!stack.isEmpty() || null != p) {
             if (null != p) {
