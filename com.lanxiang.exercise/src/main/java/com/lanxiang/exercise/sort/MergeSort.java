@@ -24,8 +24,6 @@ public class MergeSort {
         int i = left;
         int j = mid + 1;
         int k = 0;
-
-        //把较小的数组移到新数组中
         while (i <= mid && j <= right) {
             if (nums[i] < nums[j]) {
                 temp[k++] = nums[i++];
@@ -33,16 +31,12 @@ public class MergeSort {
                 temp[k++] = nums[j++];
             }
         }
-
-        //把左边剩余的数移入数组
         while (i <= mid) {
             temp[k++] = nums[i++];
         }
-        //把右边剩余的数移入数组
         while (j <= right) {
             temp[k++] = nums[j++];
         }
-        //把新数组的数覆盖nums数组
         for (int n = 0; n < temp.length; n++) {
             nums[n + left] = temp[n];
         }

@@ -29,12 +29,12 @@ public class HandMaxHeap {
         if (right < size && heap[right] > heap[largest]) {
             largest = right;
         }
-        if (largest > size || largest == i) {
+        if (largest == i || largest > size) {
             return;
         }
-        int temp = heap[largest];
-        heap[largest] = heap[i];
-        heap[i] = temp;
+        int temp = heap[i];
+        heap[i] = heap[largest];
+        heap[largest] = temp;
         maxify(largest);
     }
 

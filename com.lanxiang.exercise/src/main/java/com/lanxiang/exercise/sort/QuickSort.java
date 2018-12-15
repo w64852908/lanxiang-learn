@@ -13,7 +13,7 @@ public class QuickSort {
         }
         int mid = divide(nums, low, high);
         sort(nums, low, mid - 1);
-        sort(nums, mid + 1, high);
+        sort(nums, high, mid + 1);
     }
 
     private int divide(int[] nums, int left, int right) {
@@ -22,10 +22,11 @@ public class QuickSort {
             while (left < right && nums[right] >= temp) {
                 right--;
             }
-            nums[left] = nums[right];
+            nums[right] = nums[left];
             while (left < right && nums[left] <= temp) {
                 left++;
             }
+            nums[left] = nums[right];
         }
         nums[left] = temp;
         return left;
