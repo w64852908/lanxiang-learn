@@ -16,21 +16,13 @@ import jersey.repackaged.com.google.common.collect.Maps;
  */
 public class GenerateParameter {
 
-    private static final String KEY_1000007 = "4e60d0d79892bac0b34964eee4f34c48";
-
     private static final String KEY_1000014 = "A013F70DB97834C0A5492378BD76C53A";
-
-    private static final String KEY_1000029 = "ebevdfqkdohjhtgue6xuk443qyxldhlz";
-
-    private static final String KEY_1000021 = "eo82ptgv2607ehu7h8qeq9ri5flmp78t";
-
-    private static final String KEY_1000006 = "1001bf03c56552f2814cff37d6af7604";
 
     private String key;
 
     @Before
     public void init() {
-        key = KEY_1000007;
+        key = KEY_1000014;
     }
 
     @Test
