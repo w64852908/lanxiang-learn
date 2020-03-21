@@ -22,11 +22,11 @@ public class QuickSort {
             while (left < right && nums[right] >= temp) {
                 right--;
             }
-            nums[right] = nums[left];
+            nums[left] = nums[right];
             while (left < right && nums[left] <= temp) {
                 left++;
             }
-            nums[left] = nums[right];
+            nums[right] = nums[left];
         }
         nums[left] = temp;
         return left;
