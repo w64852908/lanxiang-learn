@@ -13,7 +13,7 @@ public class QuickSort {
         }
         int mid = divide(nums, low, high);
         sort(nums, low, mid - 1);
-        sort(nums, high, mid + 1);
+        sort(nums, mid + 1, high);
     }
 
     private int divide(int[] nums, int left, int right) {
@@ -34,7 +34,7 @@ public class QuickSort {
 
     @Test
     public void run() {
-//        int[] a = {5, 7, 3, 4, 6, 2, 1}
+//        int[] a = {5, 7, 3, 4, 6, 2, 1};
         int[] a = {1, 2, 3, 4, 5, 6};
         sort(a, 0, a.length - 1);
         for (int n : a) {
